@@ -9,7 +9,7 @@ const StockTable = ({ inventory, onUpdate, onAdjust }) => {
 
   const getStockBadge = (item) => {
     if (item.stockQuantity === 0)
-      return <span className="px-2 py-1 rounded-lg text-xs font-semibold bg-red-600 text-white">Out of Stock</span>;
+      return <span className="px-2 py-1 rounded-lg text-xs font-semibold bg-rose-600 text-white">Out of Stock</span>;
     if (item.stockQuantity <= item.lowStockThreshold)
       return <span className="px-2 py-1 rounded-lg text-xs font-semibold bg-yellow-500 text-white">Low Stock</span>;
     return <span className="px-2 py-1 rounded-lg text-xs font-semibold bg-green-500 text-white">In Stock</span>;
@@ -17,7 +17,7 @@ const StockTable = ({ inventory, onUpdate, onAdjust }) => {
 
   const getQtyBadge = (item) => {
     if (item.stockQuantity === 0)
-      return <span className="px-2 py-1 rounded-lg text-xs font-semibold bg-red-600 text-white">0</span>;
+      return <span className="px-2 py-1 rounded-lg text-xs font-semibold bg-rose-600 text-white">0</span>;
     if (item.stockQuantity <= item.lowStockThreshold)
       return <span className="px-2 py-1 rounded-lg text-xs font-semibold bg-yellow-500 text-white">{item.stockQuantity}</span>;
     return <span className="px-2 py-1 rounded-lg text-xs font-semibold bg-green-500 text-white">{item.stockQuantity}</span>;
@@ -34,7 +34,7 @@ const StockTable = ({ inventory, onUpdate, onAdjust }) => {
   return (
     <div className="overflow-x-auto">
       <table className="w-full text-left">
-        <thead className={isDark ? 'bg-slate-700' : 'bg-blue-800'}>
+        <thead className={isDark ? 'bg-slate-700' : 'bg-rose-800'}>
           <tr>
             {['Product', 'Category', 'Stock', 'Threshold', 'Supplier', 'Last Restocked', 'Status', 'Actions'].map(h => (
               <th key={h} className={`${th} ${isDark ? 'text-slate-300' : 'text-white'}`}>{h}</th>
@@ -48,7 +48,7 @@ const StockTable = ({ inventory, onUpdate, onAdjust }) => {
               className={`transition duration-150 ${
                 isDark
                   ? index % 2 === 0 ? 'bg-slate-800 hover:bg-slate-700' : 'bg-slate-900 hover:bg-slate-700'
-                  : index % 2 === 0 ? 'bg-white hover:bg-blue-50' : 'bg-gray-50 hover:bg-blue-50'
+                  : index % 2 === 0 ? 'bg-white hover:bg-rose-50' : 'bg-gray-50 hover:bg-rose-50'
               }`}
             >
               <td className={`${td} font-medium ${isDark ? 'text-white' : 'text-gray-800'}`}>{item.product?.name}</td>
@@ -64,7 +64,7 @@ const StockTable = ({ inventory, onUpdate, onAdjust }) => {
                 <div className="flex gap-2">
                   {onUpdate && (
                     <button onClick={() => onUpdate(item)}
-                      className="flex items-center gap-1 bg-blue-500 hover:bg-blue-600 text-white px-3 py-1.5 rounded-lg text-xs font-semibold transition duration-200">
+                      className="flex items-center gap-1 bg-rose-500 hover:bg-rose-600 text-white px-3 py-1.5 rounded-lg text-xs font-semibold transition duration-200">
                       <Pencil size={12} /> Update
                     </button>
                   )}

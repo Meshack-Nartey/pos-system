@@ -82,17 +82,17 @@ const Login = () => {
       className="min-h-screen flex items-center justify-center px-4 relative overflow-hidden"
       style={{
         background: isDark
-          ? 'linear-gradient(135deg, #0f172a 0%, #1e1b4b 50%, #0c1a3a 100%)'
-          : 'linear-gradient(135deg, #1e40af 0%, #4f46e5 50%, #7c3aed 100%)',
+          ? 'linear-gradient(135deg, #111827 0%, #3b1722 48%, #1f2937 100%)'
+          : 'linear-gradient(135deg, #7a2e3a 0%, #b85c72 46%, #fff1f3 100%)',
       }}
     >
       {/* Background blobs */}
       <div className="absolute -top-32 -left-32 w-96 h-96 rounded-full blur-3xl opacity-30"
-        style={{ background: 'radial-gradient(circle, #3b82f6, transparent)' }} />
+        style={{ background: 'radial-gradient(circle, #f4a8b8, transparent)' }} />
       <div className="absolute -bottom-32 -right-32 w-96 h-96 rounded-full blur-3xl opacity-30"
-        style={{ background: 'radial-gradient(circle, #818cf8, transparent)' }} />
+        style={{ background: 'radial-gradient(circle, #fde2e7, transparent)' }} />
       <div className="absolute top-1/2 left-1/4 w-64 h-64 rounded-full blur-3xl opacity-20"
-        style={{ background: 'radial-gradient(circle, #6366f1, transparent)' }} />
+        style={{ background: 'radial-gradient(circle, #e89aad, transparent)' }} />
 
       {/* Scattered faint background icons */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
@@ -115,7 +115,7 @@ const Login = () => {
 
       {/* Bottom tagline */}
       <div className="absolute bottom-6 left-1/2 -translate-x-1/2 text-white text-opacity-40 text-xs tracking-widest uppercase hidden lg:block opacity-40">
-        Point of Sale System &nbsp;·&nbsp; SaleSync
+        Point of Sale System &nbsp;·&nbsp; SwiftSale
       </div>
 
       <div className={`w-full max-w-md rounded-2xl shadow-2xl p-8 relative z-10 ${
@@ -126,13 +126,13 @@ const Login = () => {
 
         {/* Logo */}
         <div className="text-center mb-8">
-          <div className="inline-flex items-center justify-center w-16 h-16 bg-blue-600 rounded-2xl mb-4 shadow-lg">
+          <div className="inline-flex items-center justify-center w-16 h-16 bg-rose-600 rounded-2xl mb-4 shadow-lg">
             <ShoppingBag size={32} className="text-white" />
           </div>
           <h1 className={`brand-name text-4xl ${
-            isDark ? 'text-white' : 'text-blue-800'
+            isDark ? 'text-white' : 'text-rose-800'
           }`}>
-            SaleSync
+            SwiftSale
           </h1>
           <p className={`text-sm mt-1 ${
             isDark ? 'text-slate-400' : 'text-gray-500'
@@ -143,7 +143,7 @@ const Login = () => {
 
         {/* Error Message */}
         {error && (
-          <div className="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded-lg mb-4 text-sm flex items-start gap-2">
+          <div className="bg-rose-100 border border-rose-400 text-rose-700 px-4 py-3 rounded-lg mb-4 text-sm flex items-start gap-2">
             <span className="mt-0.5">⚠️</span>
             <span>{error}</span>
           </div>
@@ -169,7 +169,7 @@ const Login = () => {
                 onChange={(e) => setEmail(e.target.value)}
                 placeholder="Enter your email"
                 required
-                className={`w-full pl-10 pr-4 py-2.5 rounded-lg border text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 transition duration-200 ${
+                className={`w-full pl-10 pr-4 py-2.5 rounded-lg border text-sm focus:outline-none focus:ring-2 focus:ring-rose-500 transition duration-200 ${
                   isDark
                     ? 'bg-slate-700 border-slate-600 text-white placeholder-slate-400'
                     : 'bg-white border-gray-300 text-gray-800 placeholder-gray-400'
@@ -195,7 +195,7 @@ const Login = () => {
                 onChange={(e) => setPassword(e.target.value)}
                 placeholder="Enter your password"
                 required
-                className={`w-full pl-10 pr-10 py-2.5 rounded-lg border text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 transition duration-200 ${
+                className={`w-full pl-10 pr-10 py-2.5 rounded-lg border text-sm focus:outline-none focus:ring-2 focus:ring-rose-500 transition duration-200 ${
                   isDark
                     ? 'bg-slate-700 border-slate-600 text-white placeholder-slate-400'
                     : 'bg-white border-gray-300 text-gray-800 placeholder-gray-400'
@@ -218,7 +218,7 @@ const Login = () => {
             <button
               type="button"
               onClick={() => setShowForgotModal(true)}
-              className="text-sm text-blue-500 hover:text-blue-600 hover:underline transition"
+              className="text-sm text-rose-500 hover:text-rose-600 hover:underline transition"
             >
               Forgot password?
             </button>
@@ -228,7 +228,7 @@ const Login = () => {
           <button
             type="submit"
             disabled={loading}
-            className="w-full flex items-center justify-center gap-2 bg-blue-600 hover:bg-blue-700 text-white py-2.5 rounded-lg font-medium text-sm transition duration-200 disabled:opacity-50 disabled:cursor-not-allowed mt-2 shadow-lg shadow-blue-500/25"
+            className="w-full flex items-center justify-center gap-2 bg-rose-600 hover:bg-rose-700 text-white py-2.5 rounded-lg font-medium text-sm transition duration-200 disabled:opacity-50 disabled:cursor-not-allowed mt-2 shadow-lg shadow-rose-500/25"
           >
             {loading ? (
               <div className="w-4 h-4 border-2 border-white border-t-transparent rounded-full animate-spin" />
@@ -261,7 +261,7 @@ const Login = () => {
             </div>
 
             {resetError && (
-              <div className="bg-red-100 border border-red-400 text-red-700 px-3 py-2 rounded-lg mb-3 text-sm">
+              <div className="bg-rose-100 border border-rose-400 text-rose-700 px-3 py-2 rounded-lg mb-3 text-sm">
                 {resetError}
               </div>
             )}
@@ -285,7 +285,7 @@ const Login = () => {
                       onChange={(e) => setResetEmail(e.target.value)}
                       placeholder="Enter your email"
                       required
-                      className={`w-full pl-10 pr-4 py-2.5 rounded-lg border text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 transition ${
+                      className={`w-full pl-10 pr-4 py-2.5 rounded-lg border text-sm focus:outline-none focus:ring-2 focus:ring-rose-500 transition ${
                         isDark ? 'bg-slate-700 border-slate-600 text-white placeholder-slate-400' : 'bg-white border-gray-300 text-gray-800 placeholder-gray-400'
                       }`}
                     />
@@ -304,7 +304,7 @@ const Login = () => {
                       onChange={(e) => setResetNewPassword(e.target.value)}
                       placeholder="Enter new password"
                       required
-                      className={`w-full pl-10 pr-10 py-2.5 rounded-lg border text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 transition ${
+                      className={`w-full pl-10 pr-10 py-2.5 rounded-lg border text-sm focus:outline-none focus:ring-2 focus:ring-rose-500 transition ${
                         isDark ? 'bg-slate-700 border-slate-600 text-white placeholder-slate-400' : 'bg-white border-gray-300 text-gray-800 placeholder-gray-400'
                       }`}
                     />
@@ -327,7 +327,7 @@ const Login = () => {
                       onChange={(e) => setResetConfirmPassword(e.target.value)}
                       placeholder="Confirm new password"
                       required
-                      className={`w-full pl-10 pr-10 py-2.5 rounded-lg border text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 transition ${
+                      className={`w-full pl-10 pr-10 py-2.5 rounded-lg border text-sm focus:outline-none focus:ring-2 focus:ring-rose-500 transition ${
                         isDark ? 'bg-slate-700 border-slate-600 text-white placeholder-slate-400' : 'bg-white border-gray-300 text-gray-800 placeholder-gray-400'
                       }`}
                     />
@@ -341,7 +341,7 @@ const Login = () => {
                 <button
                   type="submit"
                   disabled={resetLoading}
-                  className="w-full bg-blue-600 hover:bg-blue-700 text-white py-2.5 rounded-lg font-medium text-sm transition disabled:opacity-50 disabled:cursor-not-allowed mt-1"
+                  className="w-full bg-rose-600 hover:bg-rose-700 text-white py-2.5 rounded-lg font-medium text-sm transition disabled:opacity-50 disabled:cursor-not-allowed mt-1"
                 >
                   {resetLoading ? 'Resetting...' : 'Reset Password'}
                 </button>
@@ -351,7 +351,7 @@ const Login = () => {
             {resetSuccess && (
               <button
                 onClick={closeForgotModal}
-                className="mt-2 w-full bg-blue-600 hover:bg-blue-700 text-white py-2.5 rounded-lg font-medium text-sm transition"
+                className="mt-2 w-full bg-rose-600 hover:bg-rose-700 text-white py-2.5 rounded-lg font-medium text-sm transition"
               >
                 Back to Login
               </button>

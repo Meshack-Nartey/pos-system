@@ -22,7 +22,7 @@ const InventoryManagement = () => {
   const [adjustData, setAdjustData] = useState({ adjustment: '', reason: '' });
   const [adjustLoading, setAdjustLoading] = useState(false);
 
-  const input = `w-full border rounded-lg px-3 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 transition duration-200 ${
+  const input = `w-full border rounded-lg px-3 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-rose-500 transition duration-200 ${
     isDark ? 'bg-slate-700 border-slate-600 text-white placeholder-slate-400' : 'bg-white border-gray-300 text-gray-800'
   }`;
   const label = `block text-xs font-medium mb-1.5 ${isDark ? 'text-slate-300' : 'text-gray-700'}`;
@@ -80,19 +80,19 @@ const InventoryManagement = () => {
 
       {/* Header */}
       <div className="mb-6">
-        <h1 className={`text-2xl font-bold ${isDark ? 'text-white' : 'text-blue-800'}`}>Inventory Management</h1>
+        <h1 className={`text-2xl font-bold ${isDark ? 'text-white' : 'text-rose-800'}`}>Inventory Management</h1>
         <p className={`text-sm mt-1 ${isDark ? 'text-slate-400' : 'text-gray-500'}`}>Track and manage stock levels</p>
       </div>
 
       {success && <div className="bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded-lg mb-4 text-sm">✅ {success}</div>}
-      {error   && <div className="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded-lg mb-4 text-sm">⚠️ {error}</div>}
+      {error   && <div className="bg-rose-100 border border-rose-400 text-rose-700 px-4 py-3 rounded-lg mb-4 text-sm">⚠️ {error}</div>}
 
       <LowStockAlert items={lowStockItems} />
 
       <div className={`rounded-xl shadow p-4 ${isDark ? 'bg-slate-800' : 'bg-white'}`}>
         {loading ? (
           <div className="text-center py-8">
-            <div className="w-8 h-8 border-4 border-blue-600 border-t-transparent rounded-full animate-spin mx-auto mb-2" />
+            <div className="w-8 h-8 border-4 border-rose-600 border-t-transparent rounded-full animate-spin mx-auto mb-2" />
             <p className={`text-sm ${isDark ? 'text-slate-400' : 'text-gray-500'}`}>Loading inventory...</p>
           </div>
         ) : (

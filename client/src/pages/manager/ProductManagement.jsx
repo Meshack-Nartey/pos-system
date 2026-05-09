@@ -25,7 +25,7 @@ const ProductManagement = () => {
   const [importResult, setImportResult] = useState(null);
   const fileInputRef = useRef(null);
 
-  const input = `w-full border rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 transition duration-200 ${
+  const input = `w-full border rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-rose-500 transition duration-200 ${
     isDark ? 'bg-slate-700 border-slate-600 text-white placeholder-slate-400' : 'bg-white border-gray-300 text-gray-800 placeholder-gray-400'
   }`;
   const modalBg = `fixed inset-0 flex items-center justify-center z-50 px-4 backdrop-blur-sm bg-black/30`;
@@ -109,7 +109,7 @@ const ProductManagement = () => {
 
       {/* Header */}
       <div className="flex justify-between items-center mb-6">
-        <h1 className={`text-2xl font-bold ${isDark ? 'text-white' : 'text-blue-800'}`}>Product Management</h1>
+        <h1 className={`text-2xl font-bold ${isDark ? 'text-white' : 'text-rose-800'}`}>Product Management</h1>
         <div className="flex items-center gap-2">
           <input
             ref={fileInputRef}
@@ -133,7 +133,7 @@ const ProductManagement = () => {
           </button>
           <button
             onClick={openAddModal}
-            className="flex items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg text-sm font-medium transition duration-200 shadow"
+            className="flex items-center gap-2 bg-rose-600 hover:bg-rose-700 text-white px-4 py-2 rounded-lg text-sm font-medium transition duration-200 shadow"
           >
             <Plus size={16} /> Add Product
           </button>
@@ -141,7 +141,7 @@ const ProductManagement = () => {
       </div>
 
       {success && <div className="bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded-lg mb-4 text-sm">✅ {success}</div>}
-      {error   && <div className="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded-lg mb-4 text-sm">⚠️ {error}</div>}
+      {error   && <div className="bg-rose-100 border border-rose-400 text-rose-700 px-4 py-3 rounded-lg mb-4 text-sm">⚠️ {error}</div>}
 
       {/* Search */}
       <div className={`rounded-xl shadow p-4 mb-6 ${isDark ? 'bg-slate-800' : 'bg-white'}`}>
@@ -156,7 +156,7 @@ const ProductManagement = () => {
       <div className={`rounded-xl shadow p-4 ${isDark ? 'bg-slate-800' : 'bg-white'}`}>
         {loading ? (
           <div className="text-center py-8">
-            <div className="w-8 h-8 border-4 border-blue-600 border-t-transparent rounded-full animate-spin mx-auto mb-2" />
+            <div className="w-8 h-8 border-4 border-rose-600 border-t-transparent rounded-full animate-spin mx-auto mb-2" />
             <p className={`text-sm ${isDark ? 'text-slate-400' : 'text-gray-500'}`}>Loading products...</p>
           </div>
         ) : (
@@ -170,8 +170,8 @@ const ProductManagement = () => {
           <div className={modalBox}>
             <div className="flex items-center justify-between mb-5">
               <div className="flex items-center gap-3">
-                <div className={`p-2 rounded-xl ${editingProduct ? 'bg-yellow-100' : 'bg-blue-100'}`}>
-                  {editingProduct ? <Pencil size={18} className="text-yellow-600" /> : <Plus size={18} className="text-blue-600" />}
+                <div className={`p-2 rounded-xl ${editingProduct ? 'bg-yellow-100' : 'bg-rose-100'}`}>
+                  {editingProduct ? <Pencil size={18} className="text-yellow-600" /> : <Plus size={18} className="text-rose-600" />}
                 </div>
                 <div>
                   <h2 className={`text-lg font-semibold ${isDark ? 'text-white' : 'text-gray-800'}`}>
@@ -201,9 +201,9 @@ const ProductManagement = () => {
           <div className={`w-full max-w-md rounded-2xl shadow-2xl p-6 ${isDark ? 'bg-slate-800 border border-slate-700' : 'bg-white'}`}>
             <div className="flex items-center justify-between mb-5">
               <div className="flex items-center gap-3">
-                <div className={`p-2 rounded-xl ${importResult.error ? 'bg-red-100' : 'bg-green-100'}`}>
+                <div className={`p-2 rounded-xl ${importResult.error ? 'bg-rose-100' : 'bg-green-100'}`}>
                   {importResult.error
-                    ? <AlertTriangle size={18} className="text-red-500" />
+                    ? <AlertTriangle size={18} className="text-rose-500" />
                     : <FileSpreadsheet size={18} className="text-green-600" />
                   }
                 </div>
@@ -218,7 +218,7 @@ const ProductManagement = () => {
             </div>
 
             {importResult.error ? (
-              <p className="text-sm text-red-500">{importResult.error}</p>
+              <p className="text-sm text-rose-500">{importResult.error}</p>
             ) : (
               <div className="space-y-4">
                 <div className="grid grid-cols-2 gap-3">
@@ -259,7 +259,7 @@ const ProductManagement = () => {
 
             <button
               onClick={() => setImportResult(null)}
-              className="mt-5 w-full bg-blue-600 hover:bg-blue-700 text-white py-2.5 rounded-xl text-sm font-medium transition"
+              className="mt-5 w-full bg-rose-600 hover:bg-rose-700 text-white py-2.5 rounded-xl text-sm font-medium transition"
             >
               Done
             </button>

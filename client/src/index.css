@@ -4,30 +4,30 @@
 
 :root {
   --bg-primary: #ffffff;
-  --bg-secondary: #f3f4f6;
+  --bg-secondary: #fff7f8;
   --bg-card: #ffffff;
   --text-primary: #111827;
   --text-secondary: #6b7280;
-  --border-color: #e5e7eb;
-  --sidebar-bg: #1e293b;
-  --navbar-bg: #1e40af;
+  --border-color: #f8d7da;
+  --sidebar-bg: #4c1d27;
+  --navbar-bg: #6b2332;
 }
 
 .dark {
   --bg-primary: #0f172a;
-  --bg-secondary: #1e293b;
+  --bg-secondary: #111827;
   --bg-card: #1e293b;
   --text-primary: #f1f5f9;
   --text-secondary: #94a3b8;
   --border-color: #334155;
-  --sidebar-bg: #0f172a;
-  --navbar-bg: #1e40af;
+  --sidebar-bg: #111827;
+  --navbar-bg: #7f1d1d;
 }
 
 .brand-name {
-  font-family: 'Poppins', sans-serif;
-  font-weight: 800;
-  letter-spacing: -0.5px;
+  font-family: 'Outfit', sans-serif;
+  font-weight: 700;
+  letter-spacing: -0.03em;
 }
 
 * {
@@ -35,6 +35,7 @@
 }
 
 body {
+  font-family: 'Outfit', sans-serif;
   background-color: var(--bg-primary);
   color: var(--text-primary);
 }

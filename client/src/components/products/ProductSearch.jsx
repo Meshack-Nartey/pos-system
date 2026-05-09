@@ -22,11 +22,11 @@ const ProductSearch = ({ onSearch, onClear }) => {
         value={query}
         onChange={(e) => setQuery(e.target.value)}
         placeholder="Search by name, category or barcode..."
-        className="flex-1 border border-gray-300 rounded px-3 py-2 text-sm focus:outline-none focus:border-blue-500"
+        className="flex-1 border border-gray-300 rounded px-3 py-2 text-sm focus:outline-none focus:border-rose-500"
       />
       <button
         type="submit"
-        className="bg-blue-800 text-white px-4 py-2 rounded text-sm font-medium hover:bg-blue-700 transition duration-200"
+        className="bg-rose-800 text-white px-4 py-2 rounded text-sm font-medium hover:bg-rose-700 transition duration-200"
       >
         Search
       </button>

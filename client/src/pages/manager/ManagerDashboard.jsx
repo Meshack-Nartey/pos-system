@@ -48,26 +48,26 @@ const ManagerDashboard = () => {
 
   const card = `rounded-xl shadow p-5 ${isDark ? 'bg-slate-800' : 'bg-white'}`;
   const label = `text-xs font-medium mb-1 ${isDark ? 'text-slate-400' : 'text-gray-500'}`;
-  const value = `text-2xl font-bold ${isDark ? 'text-white' : 'text-blue-800'}`;
+  const value = `text-2xl font-bold ${isDark ? 'text-white' : 'text-rose-800'}`;
   const sub = `text-xs mt-1 ${isDark ? 'text-slate-500' : 'text-gray-400'}`;
 
   const summaryCards = summary ? [
-    { label: 'Total Revenue', value: `GH₵ ${Number(summary.totalRevenue).toFixed(2)}`, sub: 'All time', icon: DollarSign, color: 'bg-blue-500' },
+    { label: 'Total Revenue', value: `GH₵ ${Number(summary.totalRevenue).toFixed(2)}`, sub: 'All time', icon: DollarSign, color: 'bg-rose-500' },
     { label: 'Total Transactions', value: summary.totalTransactions, sub: 'All time', icon: ShoppingCart, color: 'bg-green-500' },
     { label: 'Total Products', value: summary.totalProducts, sub: 'In system', icon: Package, color: 'bg-yellow-500' },
   ] : [];
 
   const dailyCards = dailySales ? [
     { label: "Today's Revenue", value: `GH₵ ${Number(dailySales.totalRevenue).toFixed(2)}`, icon: TrendingUp, color: 'text-green-500' },
-    { label: "Today's Transactions", value: dailySales.totalTransactions, icon: ShoppingCart, color: 'text-blue-500' },
+    { label: "Today's Transactions", value: dailySales.totalTransactions, icon: ShoppingCart, color: 'text-rose-500' },
     { label: 'Items Sold Today', value: dailySales.totalItemsSold, icon: Package, color: 'text-yellow-500' },
   ] : [];
 
   const quickLinks = [
-    { label: 'Manage Products', path: '/manager/products', icon: Package, color: 'bg-blue-500 hover:bg-blue-600' },
+    { label: 'Manage Products', path: '/manager/products', icon: Package, color: 'bg-rose-500 hover:bg-rose-600' },
     { label: 'Manage Inventory', path: '/manager/inventory', icon: Warehouse, color: 'bg-green-500 hover:bg-green-600' },
     { label: 'Manage Customers', path: '/manager/customers', icon: Users, color: 'bg-yellow-500 hover:bg-yellow-600' },
-    { label: 'View Reports', path: '/manager/reports', icon: BarChart3, color: 'bg-purple-500 hover:bg-purple-600' },
+    { label: 'View Reports', path: '/manager/reports', icon: BarChart3, color: 'bg-rose-500 hover:bg-rose-600' },
   ];
 
   return (
@@ -75,7 +75,7 @@ const ManagerDashboard = () => {
 
       {/* Welcome Header */}
       <div className="mb-6">
-        <h1 className={`text-2xl font-bold ${isDark ? 'text-white' : 'text-blue-800'}`}>
+        <h1 className={`text-2xl font-bold ${isDark ? 'text-white' : 'text-rose-800'}`}>
           Welcome back, {user?.name}! 
         </h1>
         <p className={`text-sm mt-1 ${isDark ? 'text-slate-400' : 'text-gray-500'}`}>
@@ -140,8 +140,8 @@ const ManagerDashboard = () => {
               <AreaChart data={weeklySales}>
                 <defs>
                   <linearGradient id="revenueGradM" x1="0" y1="0" x2="0" y2="1">
-                    <stop offset="5%" stopColor="#3b82f6" stopOpacity={0.3} />
-                    <stop offset="95%" stopColor="#3b82f6" stopOpacity={0} />
+                    <stop offset="5%" stopColor="#dc2626" stopOpacity={0.3} />
+                    <stop offset="95%" stopColor="#dc2626" stopOpacity={0} />
                   </linearGradient>
                 </defs>
                 <CartesianGrid strokeDasharray="3 3" stroke={isDark ? '#334155' : '#e5e7eb'} />
@@ -151,7 +151,7 @@ const ManagerDashboard = () => {
                   contentStyle={{ backgroundColor: isDark ? '#1e293b' : '#fff', border: 'none', borderRadius: '8px', fontSize: '12px' }}
                   formatter={(v) => [`GH₵ ${v}`, 'Revenue']}
                 />
-                <Area type="monotone" dataKey="revenue" stroke="#3b82f6" strokeWidth={2} fill="url(#revenueGradM)" />
+                <Area type="monotone" dataKey="revenue" stroke="#dc2626" strokeWidth={2} fill="url(#revenueGradM)" />
               </AreaChart>
             </ResponsiveContainer>
           </div>

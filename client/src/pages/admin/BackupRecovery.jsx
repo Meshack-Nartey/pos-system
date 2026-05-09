@@ -55,7 +55,7 @@ const BackupRecovery = () => {
       label: 'Products',
       description: 'Export all product data including prices and stock levels',
       icon: Package,
-      color: 'bg-blue-500'
+      color: 'bg-rose-500'
     },
     {
       collection: 'customers',
@@ -76,7 +76,7 @@ const BackupRecovery = () => {
       label: 'Users',
       description: 'Export all system user accounts and roles',
       icon: UserCog,
-      color: 'bg-purple-500'
+      color: 'bg-rose-500'
     }
   ];
 
@@ -85,7 +85,7 @@ const BackupRecovery = () => {
 
       {/* Header */}
       <div className="mb-6">
-        <h1 className={`text-2xl font-bold ${isDark ? 'text-white' : 'text-blue-800'}`}>
+        <h1 className={`text-2xl font-bold ${isDark ? 'text-white' : 'text-rose-800'}`}>
           Backup & Recovery
         </h1>
         <p className={`text-sm mt-1 ${isDark ? 'text-slate-400' : 'text-gray-500'}`}>
@@ -99,7 +99,7 @@ const BackupRecovery = () => {
         </div>
       )}
       {error && (
-        <div className="bg-red-500 bg-opacity-10 border border-red-500 text-red-500 p-3 rounded-lg mb-4 text-sm">
+        <div className="bg-rose-500 bg-opacity-10 border border-rose-500 text-rose-500 p-3 rounded-lg mb-4 text-sm">
           ⚠️ {error}
         </div>
       )}
@@ -107,15 +107,15 @@ const BackupRecovery = () => {
       {/* Info Box */}
      <div className={`rounded-xl p-4 mb-6 flex gap-3 ${
   isDark
-    ? 'bg-blue-600 border border-blue-500'
-    : 'bg-blue-50 border border-blue-200'
+    ? 'bg-rose-600 border border-rose-500'
+    : 'bg-rose-50 border border-rose-200'
 }`}>
-  <Info size={18} className={`shrink-0 mt-0.5 ${isDark ? 'text-white' : 'text-blue-500'}`} />
+  <Info size={18} className={`shrink-0 mt-0.5 ${isDark ? 'text-white' : 'text-rose-500'}`} />
   <div>
-    <p className={`text-sm font-medium mb-1 ${isDark ? 'text-white' : 'text-blue-700'}`}>
+    <p className={`text-sm font-medium mb-1 ${isDark ? 'text-white' : 'text-rose-700'}`}>
       How Backup Works
     </p>
-    <p className={`text-xs ${isDark ? 'text-blue-100' : 'text-blue-600'}`}>
+    <p className={`text-xs ${isDark ? 'text-rose-100' : 'text-rose-600'}`}>
       Clicking any export button below will download a JSON file of that collection
       to your computer. Store these files in a safe location. You can use them to
       restore data if needed.
@@ -144,7 +144,7 @@ const BackupRecovery = () => {
               <button
                 onClick={() => handleExportData(item.collection)}
                 disabled={loading}
-                className="mt-4 w-full flex items-center justify-center gap-2 bg-blue-600 hover:bg-blue-700 text-white py-2.5 rounded-lg text-sm font-medium transition duration-200 disabled:opacity-50"
+                className="mt-4 w-full flex items-center justify-center gap-2 bg-rose-600 hover:bg-rose-700 text-white py-2.5 rounded-lg text-sm font-medium transition duration-200 disabled:opacity-50"
               >
                 <Download size={16} />
                 Export {item.label}

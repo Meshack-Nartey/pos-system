@@ -63,7 +63,7 @@ const SalesChart = ({ data }) => {
           <Legend
             wrapperStyle={{ fontSize: '12px', paddingTop: '12px', color: isDark ? '#94a3b8' : '#6B7280' }}
           />
-          <Bar yAxisId="revenue" dataKey="Revenue" fill="#3b82f6" radius={[4, 4, 0, 0]} maxBarSize={48} />
+          <Bar yAxisId="revenue" dataKey="Revenue" fill="#dc2626" radius={[4, 4, 0, 0]} maxBarSize={48} />
           <Line yAxisId="transactions" type="monotone" dataKey="Transactions" stroke="#10b981" strokeWidth={2} dot={{ fill: '#10b981', r: 4 }} activeDot={{ r: 6 }} />
         </ComposedChart>
       </ResponsiveContainer>

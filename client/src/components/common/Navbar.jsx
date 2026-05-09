@@ -128,30 +128,30 @@ const Navbar = ({ onMenuClick }) => {
   const activityCount   = notifications.filter((n) => dbNotifTypes.includes(n.type)).length;
 
   const getNotifStyle = (type) => {
-    if (type === 'critical') return { bg: 'bg-red-100', text: 'text-red-500', icon: <AlertCircle size={14} /> };
+    if (type === 'critical') return { bg: 'bg-rose-100', text: 'text-rose-500', icon: <AlertCircle size={14} /> };
     if (type === 'warning')  return { bg: 'bg-yellow-100', text: isDark ? 'text-yellow-400' : 'text-yellow-600', icon: <Package size={14} /> };
     if (type === 'user_created')      return { bg: 'bg-green-100', text: 'text-green-600', icon: <UserPlus size={14} /> };
-    if (type === 'user_deleted')      return { bg: 'bg-red-100',   text: 'text-red-500',   icon: <UserX size={14} /> };
-    if (type === 'user_role_changed') return { bg: 'bg-purple-100', text: 'text-purple-600', icon: <UserCog size={14} /> };
+    if (type === 'user_deleted')      return { bg: 'bg-rose-100',   text: 'text-rose-500',   icon: <UserX size={14} /> };
+    if (type === 'user_role_changed') return { bg: 'bg-rose-100', text: 'text-rose-600', icon: <UserCog size={14} /> };
     if (type === 'product_created' || type === 'product_bulk_import') return { bg: 'bg-emerald-100', text: 'text-emerald-600', icon: <Boxes size={14} /> };
     if (type === 'product_deleted')   return { bg: 'bg-orange-100', text: 'text-orange-600', icon: <Boxes size={14} /> };
     // stock_adjustment, stock_update
-    return { bg: 'bg-blue-100', text: isDark ? 'text-blue-400' : 'text-blue-600', icon: <ClipboardList size={14} /> };
+    return { bg: 'bg-rose-100', text: isDark ? 'text-rose-400' : 'text-rose-600', icon: <ClipboardList size={14} /> };
   };
 
   return (
     <>
-      <div className="bg-blue-800 text-white px-6 py-3 flex justify-between items-center shadow-md">
+      <div className="bg-rose-800 text-white px-6 py-3 flex justify-between items-center shadow-md">
 
         {/* Left */}
         <div className="flex items-center gap-4">
           <button
             onClick={onMenuClick}
-            className="text-white hover:text-blue-200 transition duration-200 p-1 rounded hover:bg-blue-700"
+            className="text-white hover:text-rose-200 transition duration-200 p-1 rounded hover:bg-rose-700"
           >
             <Menu size={22} />
           </button>
-          <h1 className="brand-name text-xl">SaleSync</h1>
+          <h1 className="brand-name text-xl">SwiftSale</h1>
         </div>
 
         {/* Right */}
@@ -160,7 +160,7 @@ const Navbar = ({ onMenuClick }) => {
           {/* Theme Toggle */}
           <button
             onClick={toggleTheme}
-            className="p-2 rounded-lg bg-blue-700 hover:bg-blue-600 transition duration-200"
+            className="p-2 rounded-lg bg-rose-700 hover:bg-rose-600 transition duration-200"
             title={isDark ? 'Switch to Light Mode' : 'Switch to Dark Mode'}
           >
             {isDark ? <Sun size={18} /> : <Moon size={18} />}
@@ -171,12 +171,12 @@ const Navbar = ({ onMenuClick }) => {
             <div className="relative" ref={notifRef}>
               <button
                 onClick={handleOpenNotifications}
-                className="relative p-2 rounded-lg bg-blue-700 hover:bg-blue-600 transition duration-200"
+                className="relative p-2 rounded-lg bg-rose-700 hover:bg-rose-600 transition duration-200"
                 title="Notifications"
               >
                 <Bell size={18} />
                 {unreadCount > 0 && (
-                  <span className="absolute -top-1 -right-1 bg-red-500 text-white text-[10px] font-bold w-4 h-4 flex items-center justify-center rounded-full">
+                  <span className="absolute -top-1 -right-1 bg-rose-500 text-white text-[10px] font-bold w-4 h-4 flex items-center justify-center rounded-full">
                     {unreadCount > 9 ? '9+' : unreadCount}
                   </span>
                 )}
@@ -193,14 +193,14 @@ const Navbar = ({ onMenuClick }) => {
                     isDark ? 'border-slate-700' : 'border-gray-100'
                   }`}>
                     <div className="flex items-center gap-2">
-                      <Bell size={16} className="text-blue-400" />
+                      <Bell size={16} className="text-rose-400" />
                       <span className={`font-semibold text-sm ${isDark ? 'text-white' : 'text-gray-800'}`}>
                         Notifications
                       </span>
                     </div>
                     <div className="flex items-center gap-2">
                       {notifications.length > 0 && (
-                        <span className="text-xs bg-red-100 text-red-600 font-medium px-2 py-0.5 rounded-full">
+                        <span className="text-xs bg-rose-100 text-rose-600 font-medium px-2 py-0.5 rounded-full">
                           {notifications.length} alert{notifications.length > 1 ? 's' : ''}
                         </span>
                       )}
@@ -211,7 +211,7 @@ const Navbar = ({ onMenuClick }) => {
                   {notifications.length > 0 && (
                     <div className={`flex flex-wrap gap-2 px-4 py-2 border-b ${isDark ? 'border-slate-700 bg-slate-900' : 'border-gray-100 bg-gray-50'}`}>
                       {criticalCount > 0 && (
-                        <span className="flex items-center gap-1 text-xs bg-red-100 text-red-600 px-2 py-1 rounded-full font-medium">
+                        <span className="flex items-center gap-1 text-xs bg-rose-100 text-rose-600 px-2 py-1 rounded-full font-medium">
                           <AlertCircle size={11} /> {criticalCount} Out of Stock
                         </span>
                       )}
@@ -221,7 +221,7 @@ const Navbar = ({ onMenuClick }) => {
                         </span>
                       )}
                       {activityCount > 0 && (
-                        <span className="flex items-center gap-1 text-xs bg-blue-100 text-blue-700 px-2 py-1 rounded-full font-medium">
+                        <span className="flex items-center gap-1 text-xs bg-rose-100 text-rose-700 px-2 py-1 rounded-full font-medium">
                           <ClipboardList size={11} /> {activityCount} Activit{activityCount > 1 ? 'ies' : 'y'}
                         </span>
                       )}
@@ -286,7 +286,7 @@ const Navbar = ({ onMenuClick }) => {
                           navigate(path);
                           setShowNotifications(false);
                         }}
-                        className="w-full text-xs text-blue-500 hover:text-blue-600 font-medium text-center transition"
+                        className="w-full text-xs text-rose-500 hover:text-rose-600 font-medium text-center transition"
                       >
                         Go to Inventory Management →
                       </button>
@@ -300,19 +300,19 @@ const Navbar = ({ onMenuClick }) => {
 
           {/* User Info */}
           <div className="flex items-center gap-2">
-            <div className="bg-blue-700 p-2 rounded-full">
+            <div className="bg-rose-700 p-2 rounded-full">
               <User size={16} />
             </div>
             <div className="text-right">
               <p className="text-sm font-medium leading-none">{user?.name}</p>
-              <p className="text-xs text-blue-200 capitalize mt-0.5">{user?.role}</p>
+              <p className="text-xs text-rose-200 capitalize mt-0.5">{user?.role}</p>
             </div>
           </div>
 
           {/* Logout Button */}
           <button
             onClick={() => setShowLogoutModal(true)}
-            className="flex items-center gap-2 bg-blue-700 hover:bg-red-600 text-white text-sm px-4 py-2 rounded-lg transition duration-200"
+            className="flex items-center gap-2 bg-rose-700 hover:bg-rose-600 text-white text-sm px-4 py-2 rounded-lg transition duration-200"
           >
             <LogOut size={16} />
             <span>Logout</span>
@@ -328,7 +328,7 @@ const Navbar = ({ onMenuClick }) => {
 
             <div className="flex justify-between items-center mb-4">
               <div className="flex items-center gap-3">
-                <div className="bg-red-500 rounded-full p-2">
+                <div className="bg-rose-500 rounded-full p-2">
                   <AlertTriangle size={20} className="text-white" />
                 </div>
                 <h2 className={`text-lg font-semibold ${isDark ? 'text-white' : 'text-gray-700'}`}>
@@ -350,7 +350,7 @@ const Navbar = ({ onMenuClick }) => {
             <div className="flex gap-3">
               <button
                 onClick={handleLogoutConfirm}
-                className="flex-1 flex items-center justify-center gap-2 bg-red-500 hover:bg-red-600 text-white py-2.5 rounded-xl text-sm font-medium transition duration-200"
+                className="flex-1 flex items-center justify-center gap-2 bg-rose-500 hover:bg-rose-600 text-white py-2.5 rounded-xl text-sm font-medium transition duration-200"
               >
                 <LogOut size={16} />
                 Yes, Logout
