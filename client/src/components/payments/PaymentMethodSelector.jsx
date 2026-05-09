@@ -23,13 +23,13 @@ const PaymentMethodSelector = ({ selected, onChange }) => {
           onClick={() => onChange(method.id)}
           className={`p-4 rounded-lg border-2 text-center transition duration-200 ${
             selected === method.id
-              ? 'border-rose-800 bg-rose-50'
+              ? 'border-rose-600 bg-rose-50'
               : 'border-gray-200 bg-white hover:border-red-300'
           }`}
         >
           <p className="text-2xl mb-1">{method.emoji}</p>
           <p className={`text-sm font-semibold ${
-            selected === method.id ? 'text-rose-800' : 'text-gray-700'
+            selected === method.id ? 'text-rose-600' : 'text-gray-700'
           }`}>
             {method.label}
           </p>

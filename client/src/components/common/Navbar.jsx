@@ -141,13 +141,13 @@ const Navbar = ({ onMenuClick }) => {
 
   return (
     <>
-      <div className="bg-rose-800 text-white px-6 py-3 flex justify-between items-center shadow-md">
+      <div className="bg-rose-500 text-white px-6 py-3 flex justify-between items-center shadow-md">
 
         {/* Left */}
         <div className="flex items-center gap-4">
           <button
             onClick={onMenuClick}
-            className="text-white hover:text-rose-200 transition duration-200 p-1 rounded hover:bg-rose-700"
+            className="text-white hover:text-rose-100 transition duration-200 p-1 rounded hover:bg-rose-600"
           >
             <Menu size={22} />
           </button>
@@ -160,7 +160,7 @@ const Navbar = ({ onMenuClick }) => {
           {/* Theme Toggle */}
           <button
             onClick={toggleTheme}
-            className="p-2 rounded-lg bg-rose-700 hover:bg-rose-600 transition duration-200"
+            className="p-2 rounded-lg bg-rose-400 hover:bg-rose-500 transition duration-200"
             title={isDark ? 'Switch to Light Mode' : 'Switch to Dark Mode'}
           >
             {isDark ? <Sun size={18} /> : <Moon size={18} />}
@@ -171,7 +171,7 @@ const Navbar = ({ onMenuClick }) => {
             <div className="relative" ref={notifRef}>
               <button
                 onClick={handleOpenNotifications}
-                className="relative p-2 rounded-lg bg-rose-700 hover:bg-rose-600 transition duration-200"
+                className="relative p-2 rounded-lg bg-rose-400 hover:bg-rose-500 transition duration-200"
                 title="Notifications"
               >
                 <Bell size={18} />

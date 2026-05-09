@@ -24,8 +24,8 @@ const ReceiptScreen = () => {
   return (
     <div className={`min-h-screen flex items-center justify-center p-4 relative overflow-hidden print:bg-white print:block print:p-0 ${
       isDark
-        ? 'bg-gradient-to-br from-slate-900 via-rose-950 to-slate-900'
-        : 'bg-gradient-to-br from-rose-700 via-rose-600 to-rose-700'
+        ? 'bg-gradient-to-br from-slate-900 via-rose-500 to-slate-900'
+        : 'bg-gradient-to-br from-rose-400 via-rose-300 to-rose-200'
     }`}>
 
       {/* Decorative background icons — hidden when printing */}
@@ -36,14 +36,14 @@ const ReceiptScreen = () => {
         <Package    size={110} className="absolute bottom-10 right-10 opacity-[0.05] text-white rotate-[-10deg]" />
         <Users      size={80}  className="absolute top-1/2 left-1/3 opacity-[0.04] text-white rotate-[8deg]" />
         {/* Glowing blobs */}
-        <div className={`absolute -top-20 -left-20 w-72 h-72 rounded-full blur-3xl opacity-20 ${isDark ? 'bg-rose-600' : 'bg-white'}`} />
-        <div className={`absolute -bottom-20 -right-20 w-72 h-72 rounded-full blur-3xl opacity-20 ${isDark ? 'bg-rose-600' : 'bg-rose-200'}`} />
+        <div className={`absolute -top-20 -left-20 w-72 h-72 rounded-full blur-3xl opacity-20 ${isDark ? 'bg-rose-500' : 'bg-white'}`} />
+        <div className={`absolute -bottom-20 -right-20 w-72 h-72 rounded-full blur-3xl opacity-20 ${isDark ? 'bg-rose-500' : 'bg-rose-100'}`} />
       </div>
 
       <div id="receipt-card" className={`w-full max-w-md rounded-2xl shadow-2xl overflow-hidden relative z-10 ${isDark ? 'bg-slate-800' : 'bg-white'}`}>
 
         {/* Success Header */}
-        <div className="bg-rose-600 p-6 text-center">
+        <div className="bg-rose-500 p-6 text-center">
           <div className="flex items-center justify-center mb-3">
             <div className="bg-white bg-opacity-20 rounded-full p-3">
               <ShoppingBag size={32} className="text-white" />

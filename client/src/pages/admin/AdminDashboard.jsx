@@ -49,7 +49,7 @@ const AdminDashboard = () => {
 
   const card = `rounded-xl shadow p-5 ${isDark ? 'bg-slate-800' : 'bg-white'}`;
   const label = `text-xs font-medium mb-1 ${isDark ? 'text-slate-400' : 'text-gray-500'}`;
-  const value = `text-2xl font-bold ${isDark ? 'text-white' : 'text-rose-800'}`;
+  const value = `text-2xl font-bold ${isDark ? 'text-white' : 'text-rose-600'}`;
   const sub = `text-xs mt-1 ${isDark ? 'text-slate-500' : 'text-gray-400'}`;
 
   const summaryCards = summary ? [
@@ -79,7 +79,7 @@ const AdminDashboard = () => {
 
       {/* Welcome Header */}
       <div className="mb-6">
-        <h1 className={`text-2xl font-bold ${isDark ? 'text-white' : 'text-rose-800'}`}>
+        <h1 className={`text-2xl font-bold ${isDark ? 'text-white' : 'text-rose-600'}`}>
           Welcome back, {user?.name}! 
         </h1>
         <p className={`text-sm mt-1 ${isDark ? 'text-slate-400' : 'text-gray-500'}`}>

@@ -18,7 +18,7 @@ const ProductTable = ({ products, onEdit, onDelete }) => {
   return (
     <div className="overflow-x-auto">
       <table className="w-full text-left">
-        <thead className={isDark ? 'bg-slate-700' : 'bg-rose-800'}>
+        <thead className={isDark ? 'bg-slate-700' : 'bg-rose-600'}>
           <tr>
             {['Name', 'Category', 'Price (GH₵)', 'Quantity', 'Barcode', 'Supplier', 'Actions'].map(h => (
               <th key={h} className={`${th} ${isDark ? 'text-slate-300' : 'text-white'}`}>{h}</th>

@@ -73,7 +73,7 @@ const Reports = () => {
       {/* Header */}
       <div className="flex justify-between items-center mb-6">
         <div>
-          <h1 className={`text-2xl font-bold ${isDark ? 'text-white' : 'text-rose-800'}`}>Reports & Analytics</h1>
+          <h1 className={`text-2xl font-bold ${isDark ? 'text-white' : 'text-rose-600'}`}>Reports & Analytics</h1>
           <p className={`text-sm mt-1 ${isDark ? 'text-slate-400' : 'text-gray-500'}`}>Business performance overview</p>
         </div>
         <button

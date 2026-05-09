@@ -69,7 +69,7 @@ const EndOfDayReport = () => {
       {/* Header */}
       <div className="flex justify-between items-center mb-6">
         <div>
-          <h1 className={`text-2xl font-bold ${isDark ? 'text-white' : 'text-rose-800'}`}>End of Day Report</h1>
+          <h1 className={`text-2xl font-bold ${isDark ? 'text-white' : 'text-rose-600'}`}>End of Day Report</h1>
           <p className={`text-sm mt-1 ${isDark ? 'text-slate-400' : 'text-gray-500'}`}>Daily closing summary</p>
         </div>
         <div className="flex items-center gap-3">

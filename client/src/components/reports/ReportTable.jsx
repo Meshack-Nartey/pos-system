@@ -20,7 +20,7 @@ const ReportTable = ({ title, headers, rows, emptyMessage }) => {
       ) : (
         <div className="overflow-x-auto">
           <table className="w-full text-left">
-            <thead className={isDark ? 'bg-slate-700' : 'bg-rose-800'}>
+            <thead className={isDark ? 'bg-slate-700' : 'bg-rose-600'}>
               <tr>
                 {headers.map((header, index) => (
                   <th key={index} className={`${th} ${isDark ? 'text-slate-300' : 'text-white'}`}>

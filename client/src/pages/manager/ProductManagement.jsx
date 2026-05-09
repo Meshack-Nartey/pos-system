@@ -109,7 +109,7 @@ const ProductManagement = () => {
 
       {/* Header */}
       <div className="flex justify-between items-center mb-6">
-        <h1 className={`text-2xl font-bold ${isDark ? 'text-white' : 'text-rose-800'}`}>Product Management</h1>
+        <h1 className={`text-2xl font-bold ${isDark ? 'text-white' : 'text-rose-600'}`}>Product Management</h1>
         <div className="flex items-center gap-2">
           <input
             ref={fileInputRef}

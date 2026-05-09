@@ -82,17 +82,17 @@ const Login = () => {
       className="min-h-screen flex items-center justify-center px-4 relative overflow-hidden"
       style={{
         background: isDark
-          ? 'linear-gradient(135deg, #111827 0%, #3b1722 48%, #1f2937 100%)'
-          : 'linear-gradient(135deg, #7a2e3a 0%, #b85c72 46%, #fff1f3 100%)',
+          ? 'linear-gradient(135deg, #111827 0%, #5a2b38 48%, #1f2937 100%)'
+          : 'linear-gradient(135deg, #c07688 0%, #e6afbb 46%, #fff5f7 100%)',
       }}
     >
       {/* Background blobs */}
       <div className="absolute -top-32 -left-32 w-96 h-96 rounded-full blur-3xl opacity-30"
-        style={{ background: 'radial-gradient(circle, #f4a8b8, transparent)' }} />
+        style={{ background: 'radial-gradient(circle, #f7c4cf, transparent)' }} />
       <div className="absolute -bottom-32 -right-32 w-96 h-96 rounded-full blur-3xl opacity-30"
-        style={{ background: 'radial-gradient(circle, #fde2e7, transparent)' }} />
+        style={{ background: 'radial-gradient(circle, #fff0f3, transparent)' }} />
       <div className="absolute top-1/2 left-1/4 w-64 h-64 rounded-full blur-3xl opacity-20"
-        style={{ background: 'radial-gradient(circle, #e89aad, transparent)' }} />
+        style={{ background: 'radial-gradient(circle, #f1bcc8, transparent)' }} />
 
       {/* Scattered faint background icons */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
@@ -130,7 +130,7 @@ const Login = () => {
             <ShoppingBag size={32} className="text-white" />
           </div>
           <h1 className={`brand-name text-4xl ${
-            isDark ? 'text-white' : 'text-rose-800'
+            isDark ? 'text-white' : 'text-rose-600'
           }`}>
             SwiftSale
           </h1>

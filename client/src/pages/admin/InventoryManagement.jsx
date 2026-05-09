@@ -103,7 +103,7 @@ const InventoryManagement = () => {
 
       {/* Header */}
       <div className="mb-6">
-        <h1 className={`text-2xl font-bold ${isDark ? 'text-white' : 'text-rose-800'}`}>Inventory Management</h1>
+        <h1 className={`text-2xl font-bold ${isDark ? 'text-white' : 'text-rose-600'}`}>Inventory Management</h1>
         <p className={`text-sm mt-1 ${isDark ? 'text-slate-400' : 'text-gray-500'}`}>Track and manage stock levels</p>
       </div>
 

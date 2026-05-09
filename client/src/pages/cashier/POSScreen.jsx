@@ -260,7 +260,7 @@ const POSScreen = () => {
     <div className={`h-screen flex flex-col ${isDark ? 'bg-slate-900' : 'bg-gray-100'}`}>
 
       {/* Header */}
-      <div className="bg-rose-800 text-white px-6 py-3 flex justify-between items-center shadow-md">
+      <div className="bg-rose-500 text-white px-6 py-3 flex justify-between items-center shadow-md">
         <div className="flex items-center gap-3">
           <ShoppingCart size={22} />
           <div>
@@ -277,7 +277,7 @@ const POSScreen = () => {
           </p>
           <button
             onClick={() => setShowLogoutModal(true)}
-            className="flex items-center gap-2 bg-rose-700 hover:bg-rose-600 text-white text-sm px-3 py-1.5 rounded-lg transition duration-200"
+            className="flex items-center gap-2 bg-rose-400 hover:bg-rose-500 text-white text-sm px-3 py-1.5 rounded-lg transition duration-200"
           >
             <LogOut size={14} />
             Logout

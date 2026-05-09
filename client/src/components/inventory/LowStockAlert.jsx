@@ -14,7 +14,7 @@ const LowStockAlert = ({ items }) => {
 
       {/* Out of Stock */}
       {outOfStock.length > 0 && (
-        <div className={`border rounded-xl p-4 ${isDark ? 'bg-rose-950 bg-opacity-40 border-rose-700' : 'bg-rose-50 border-rose-200'}`}>
+        <div className={`border rounded-xl p-4 ${isDark ? 'bg-rose-600 bg-opacity-40 border-rose-700' : 'bg-rose-50 border-rose-200'}`}>
           <div className="flex items-center gap-2 mb-3">
             <AlertCircle size={16} className="text-rose-500" />
             <h3 className="text-rose-500 font-semibold text-sm">

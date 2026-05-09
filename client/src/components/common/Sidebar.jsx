@@ -43,13 +43,13 @@ const Sidebar = ({ isOpen }) => {
   return (
     <div className={`h-full transition-all duration-300 flex flex-col ${
       isOpen ? 'w-56' : 'w-0 overflow-hidden'
-    } ${isDark ? 'bg-slate-950 border-r border-slate-800' : 'bg-rose-950'}`}>
+    } ${isDark ? 'bg-slate-950 border-r border-slate-800' : 'bg-rose-500'}`}>
 
       <div className="p-4 flex-1">
 
         {/* User Info */}
         <div className={`rounded-xl p-3 mb-6 ${
-          isDark ? 'bg-slate-900 border border-slate-800' : 'bg-rose-900'
+          isDark ? 'bg-slate-900 border border-slate-800' : 'bg-rose-400'
         }`}>
           <div className="flex items-center gap-3">
             <div className="bg-rose-600 rounded-full p-2">
@@ -77,10 +77,10 @@ const Sidebar = ({ isOpen }) => {
                 className={({ isActive }) =>
                   `flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm transition duration-200 ${
                     isActive
-                      ? 'bg-rose-600 text-white font-medium'
+                      ? 'bg-rose-300 text-rose-950 font-medium'
                       : isDark
                         ? 'text-slate-300 hover:bg-slate-800 hover:text-white'
-                        : 'text-rose-100 hover:bg-rose-900 hover:text-white'
+                        : 'text-white/90 hover:bg-rose-400 hover:text-white'
                   }`
                 }
               >

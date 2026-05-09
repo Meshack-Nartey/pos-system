@@ -89,7 +89,7 @@ const CustomerManagement = () => {
 
       {/* Header */}
       <div className="flex justify-between items-center mb-6">
-        <h1 className={`text-2xl font-bold ${isDark ? 'text-white' : 'text-rose-800'}`}>Customer Management</h1>
+        <h1 className={`text-2xl font-bold ${isDark ? 'text-white' : 'text-rose-600'}`}>Customer Management</h1>
         <button
           onClick={openAddModal}
           className="flex items-center gap-2 bg-rose-600 hover:bg-rose-700 text-white px-4 py-2 rounded-lg text-sm font-medium transition duration-200 shadow"

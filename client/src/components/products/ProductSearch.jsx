@@ -26,7 +26,7 @@ const ProductSearch = ({ onSearch, onClear }) => {
       />
       <button
         type="submit"
-        className="bg-rose-800 text-white px-4 py-2 rounded text-sm font-medium hover:bg-rose-700 transition duration-200"
+        className="bg-rose-600 text-white px-4 py-2 rounded text-sm font-medium hover:bg-rose-700 transition duration-200"
       >
         Search
       </button>
