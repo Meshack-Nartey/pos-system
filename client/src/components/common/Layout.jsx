@@ -8,7 +8,7 @@ const Layout = ({ children }) => {
   const { isDark } = useTheme();
 
   return (
-    <div className={`h-screen flex flex-col ${isDark ? 'dark bg-slate-900' : 'bg-rose-50'}`}>
+    <div className={`h-screen flex flex-col ${isDark ? 'dark bg-slate-900' : 'bg-white'}`}>
 
       {/* Navbar */}
       <Navbar onMenuClick={() => setSidebarOpen(!sidebarOpen)} />
@@ -20,7 +20,7 @@ const Layout = ({ children }) => {
         <Sidebar isOpen={sidebarOpen} />
 
         {/* Main Content */}
-        <div className={`flex-1 overflow-y-auto ${isDark ? 'bg-slate-900' : 'bg-rose-50'}`}>
+        <div className={`flex-1 overflow-y-auto ${isDark ? 'bg-slate-900' : 'bg-white'}`}>
           {children}
         </div>
 

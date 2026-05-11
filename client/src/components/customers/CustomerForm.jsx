@@ -27,7 +27,7 @@ const CustomerForm = ({ onSubmit, initialData, onCancel }) => {
     onSubmit(formData);
   };
 
-  const input = `w-full border rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-rose-500 transition duration-200 ${
+  const input = `w-full border rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-[#FF0000] transition duration-200 ${
     isDark
       ? 'bg-slate-700 border-slate-600 text-white placeholder-slate-400'
       : 'bg-white border-gray-300 text-gray-800'
@@ -63,7 +63,7 @@ const CustomerForm = ({ onSubmit, initialData, onCancel }) => {
       <div className="flex gap-3 pt-2">
         <button
           type="submit"
-          className="flex items-center gap-2 bg-rose-600 hover:bg-rose-700 text-white px-6 py-2 rounded-lg text-sm font-medium transition duration-200 shadow"
+          className="flex items-center gap-2 bg-white hover:bg-[#FFF5F5] text-[#E60000] border border-[#FFD6D6] px-6 py-2 rounded-lg text-sm font-medium transition duration-200 shadow"
         >
           {initialData ? 'Update Customer' : 'Register Customer'}
         </button>

@@ -56,12 +56,12 @@ const EndOfDayReport = () => {
   const card = `rounded-xl p-5 ${isDark ? 'bg-slate-800' : 'bg-white'} shadow`;
 
   const stats = report ? [
-    { label: 'Total Revenue', value: `GH₵ ${Number(report.totalRevenue).toFixed(2)}`, icon: DollarSign, color: 'text-rose-500' },
+    { label: 'Total Revenue', value: `GH₵ ${Number(report.totalRevenue).toFixed(2)}`, icon: DollarSign, color: 'text-[#FF0000]' },
     { label: 'Transactions', value: report.totalTransactions, icon: ShoppingCart, color: 'text-green-500' },
     { label: 'Items Sold', value: report.totalItemsSold, icon: Package, color: 'text-yellow-500' },
     { label: 'Cash Collected', value: `GH₵ ${Number(report.totalCash).toFixed(2)}`, icon: Banknote, color: 'text-emerald-500' },
-    { label: 'Mobile Money', value: `GH₵ ${Number(report.totalMobileMoney).toFixed(2)}`, icon: Smartphone, color: 'text-rose-500' },
-    { label: 'Total Discounts', value: `GH₵ ${Number(report.totalDiscount).toFixed(2)}`, icon: Tag, color: 'text-rose-400' },
+    { label: 'Mobile Money', value: `GH₵ ${Number(report.totalMobileMoney).toFixed(2)}`, icon: Smartphone, color: 'text-[#FF0000]' },
+    { label: 'Total Discounts', value: `GH₵ ${Number(report.totalDiscount).toFixed(2)}`, icon: Tag, color: 'text-[#FF3333]' },
   ] : [];
 
   return (
@@ -69,7 +69,7 @@ const EndOfDayReport = () => {
       {/* Header */}
       <div className="flex justify-between items-center mb-6">
         <div>
-          <h1 className={`text-2xl font-bold ${isDark ? 'text-white' : 'text-rose-600'}`}>End of Day Report</h1>
+          <h1 className={`text-2xl font-bold ${isDark ? 'text-white' : 'text-[#E60000]'}`}>End of Day Report</h1>
           <p className={`text-sm mt-1 ${isDark ? 'text-slate-400' : 'text-gray-500'}`}>Daily closing summary</p>
         </div>
         <div className="flex items-center gap-3">
@@ -79,7 +79,7 @@ const EndOfDayReport = () => {
               type="date"
               value={selectedDate}
               onChange={(e) => setSelectedDate(e.target.value)}
-              className={`border rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-rose-500 ${
+              className={`border rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-[#FF0000] ${
                 isDark ? 'bg-slate-700 border-slate-600 text-white' : 'bg-white border-gray-300 text-gray-800'
               }`}
             />
@@ -87,7 +87,7 @@ const EndOfDayReport = () => {
           {report && report.totalTransactions > 0 && (
             <button
               onClick={handlePrint}
-              className="flex items-center gap-2 bg-rose-600 hover:bg-rose-700 text-white px-4 py-2 rounded-lg text-sm font-medium transition shadow"
+              className="flex items-center gap-2 bg-white hover:bg-[#FFF5F5] text-[#E60000] border border-[#FFD6D6] px-4 py-2 rounded-lg text-sm font-medium transition shadow"
             >
               <Printer size={16} />
               Print Report
@@ -98,7 +98,7 @@ const EndOfDayReport = () => {
 
       {loading ? (
         <div className="text-center py-16">
-          <div className="w-8 h-8 border-4 border-rose-600 border-t-transparent rounded-full animate-spin mx-auto mb-2" />
+          <div className="w-8 h-8 border-4 border-[#E60000] border-t-transparent rounded-full animate-spin mx-auto mb-2" />
           <p className={`text-sm ${isDark ? 'text-slate-400' : 'text-gray-500'}`}>Loading report...</p>
         </div>
       ) : !report || report.totalTransactions === 0 ? (
@@ -141,7 +141,7 @@ const EndOfDayReport = () => {
           {report.cashierBreakdown?.length > 0 && (
             <div className={card}>
               <div className="flex items-center gap-2 mb-4">
-                <User size={16} className="text-rose-500" />
+                <User size={16} className="text-[#FF0000]" />
                 <p className={`font-semibold text-sm ${isDark ? 'text-white' : 'text-gray-800'}`}>Cashier Breakdown</p>
               </div>
               <table className="w-full text-sm">
@@ -157,7 +157,7 @@ const EndOfDayReport = () => {
                     <tr key={i} className={`border-t ${isDark ? 'border-slate-700' : 'border-gray-100'}`}>
                       <td className={`py-3 font-medium ${isDark ? 'text-white' : 'text-gray-800'}`}>{c.name}</td>
                       <td className={`py-3 text-right ${isDark ? 'text-slate-300' : 'text-gray-600'}`}>{c.transactions}</td>
-                      <td className="py-3 text-right font-semibold text-rose-500">GH₵ {Number(c.revenue).toFixed(2)}</td>
+                      <td className="py-3 text-right font-semibold text-[#FF0000]">GH₵ {Number(c.revenue).toFixed(2)}</td>
                     </tr>
                   ))}
                 </tbody>

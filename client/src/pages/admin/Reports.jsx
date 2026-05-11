@@ -51,7 +51,7 @@ const Reports = () => {
     return (
       <div className="p-6 flex items-center justify-center h-64">
         <div className="text-center">
-          <div className="w-10 h-10 border-4 border-rose-600 border-t-transparent rounded-full animate-spin mx-auto mb-3" />
+          <div className="w-10 h-10 border-4 border-[#E60000] border-t-transparent rounded-full animate-spin mx-auto mb-3" />
           <p className={`text-sm ${isDark ? 'text-slate-400' : 'text-gray-500'}`}>Loading reports...</p>
         </div>
       </div>
@@ -59,17 +59,17 @@ const Reports = () => {
   }
 
   const summaryItems = summary ? [
-    { label: 'Total Revenue',      value: `GH₵ ${Number(summary.totalRevenue).toFixed(2)}`, icon: TrendingUp, color: 'bg-rose-500',   ring: 'ring-rose-100' },
+    { label: 'Total Revenue',      value: `GH₵ ${Number(summary.totalRevenue).toFixed(2)}`, icon: TrendingUp, color: 'bg-[#FF0000]',   ring: 'ring-[#FFF0F0]' },
     { label: 'Total Transactions', value: summary.totalTransactions,                         icon: ShoppingCart, color: 'bg-green-500', ring: 'ring-green-100' },
     { label: 'Total Products',     value: summary.totalProducts,                             icon: Package,    color: 'bg-yellow-500', ring: 'ring-yellow-100' },
-    { label: 'Total Customers',    value: summary.totalCustomers,                            icon: Users,      color: 'bg-rose-500', ring: 'ring-rose-100' },
-    { label: 'Total Users',        value: summary.totalUsers,                                icon: UserCog,    color: 'bg-rose-500',    ring: 'ring-rose-100' },
+    { label: 'Total Customers',    value: summary.totalCustomers,                            icon: Users,      color: 'bg-[#FF0000]', ring: 'ring-[#FFF0F0]' },
+    { label: 'Total Users',        value: summary.totalUsers,                                icon: UserCog,    color: 'bg-[#FF0000]',    ring: 'ring-[#FFF0F0]' },
   ] : [];
 
   const dailyItems = dailySales ? [
-    { label: "Today's Revenue",      value: `GH₵ ${Number(dailySales.totalRevenue).toFixed(2)}`, icon: TrendingUp,  color: 'text-rose-500',  bg: isDark ? 'bg-rose-500/10' : 'bg-rose-50' },
+    { label: "Today's Revenue",      value: `GH₵ ${Number(dailySales.totalRevenue).toFixed(2)}`, icon: TrendingUp,  color: 'text-[#FF0000]',  bg: isDark ? 'bg-[#FF0000]/10' : 'bg-[#FFF5F5]' },
     { label: "Today's Transactions", value: dailySales.totalTransactions,                         icon: ShoppingCart, color: 'text-green-500', bg: isDark ? 'bg-green-500/10' : 'bg-green-50' },
-    { label: 'Items Sold Today',     value: dailySales.totalItemsSold,                            icon: Package,     color: 'text-rose-500', bg: isDark ? 'bg-rose-500/10' : 'bg-rose-50' },
+    { label: 'Items Sold Today',     value: dailySales.totalItemsSold,                            icon: Package,     color: 'text-[#FF0000]', bg: isDark ? 'bg-[#FF0000]/10' : 'bg-[#FFF5F5]' },
   ] : [];
 
   return (
@@ -78,13 +78,13 @@ const Reports = () => {
       {/* Header */}
       <div className="flex justify-between items-center mb-6">
         <div>
-          <h1 className={`text-2xl font-bold ${isDark ? 'text-white' : 'text-rose-600'}`}>Reports & Analytics</h1>
+          <h1 className={`text-2xl font-bold ${isDark ? 'text-white' : 'text-[#E60000]'}`}>Reports & Analytics</h1>
           <p className={`text-sm mt-1 ${isDark ? 'text-slate-400' : 'text-gray-500'}`}>Business performance overview</p>
         </div>
         <button
           onClick={fetchAllReports}
           disabled={refreshing}
-          className="flex items-center gap-2 bg-rose-600 hover:bg-rose-700 text-white px-4 py-2 rounded-lg text-sm font-medium transition duration-200 disabled:opacity-60"
+          className="flex items-center gap-2 bg-white hover:bg-[#FFF5F5] text-[#E60000] border border-[#FFD6D6] px-4 py-2 rounded-lg text-sm font-medium transition duration-200 disabled:opacity-60"
         >
           <RefreshCw size={16} className={refreshing ? 'animate-spin' : ''} />
           {refreshing ? 'Refreshing...' : 'Refresh'}
@@ -92,7 +92,7 @@ const Reports = () => {
       </div>
 
       {error && (
-        <div className="bg-rose-100 border border-rose-400 text-rose-700 px-4 py-3 rounded-lg mb-4 text-sm">
+        <div className="bg-[#FFF0F0] border border-[#FF3333] text-[#CC0000] px-4 py-3 rounded-lg mb-4 text-sm">
           ⚠️ {error}
         </div>
       )}

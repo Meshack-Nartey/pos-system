@@ -50,7 +50,7 @@ const CartItem = ({ item, onRemove, onUpdateQuantity }) => {
       {/* Remove Button */}
       <button
         onClick={() => onRemove(item._id)}
-        className="text-rose-400 hover:text-rose-500 transition duration-200 p-1 rounded-lg hover:bg-rose-500 hover:bg-opacity-10"
+        className="text-[#FF3333] hover:text-[#FF0000] transition duration-200 p-1 rounded-lg hover:bg-[#FF0000] hover:bg-opacity-10"
       >
         <X size={14} />
       </button>

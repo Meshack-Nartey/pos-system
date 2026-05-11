@@ -18,10 +18,10 @@ const ProductTable = ({ products, onEdit, onDelete }) => {
   return (
     <div className="overflow-x-auto">
       <table className="w-full text-left">
-        <thead className={isDark ? 'bg-slate-700' : 'bg-rose-600'}>
+        <thead className={isDark ? 'bg-slate-700' : 'bg-white border-y border-[#FFD6D6]'}>
           <tr>
             {['Name', 'Category', 'Price (GH₵)', 'Quantity', 'Barcode', 'Supplier', 'Actions'].map(h => (
-              <th key={h} className={`${th} ${isDark ? 'text-slate-300' : 'text-white'}`}>{h}</th>
+              <th key={h} className={`${th} ${isDark ? 'text-slate-300' : 'text-[#E60000]'}`}>{h}</th>
             ))}
           </tr>
         </thead>
@@ -32,7 +32,7 @@ const ProductTable = ({ products, onEdit, onDelete }) => {
               className={`transition duration-150 ${
                 isDark
                   ? index % 2 === 0 ? 'bg-slate-800 hover:bg-slate-700' : 'bg-slate-900 hover:bg-slate-700'
-                  : index % 2 === 0 ? 'bg-white hover:bg-rose-50' : 'bg-gray-50 hover:bg-rose-50'
+                  : index % 2 === 0 ? 'bg-white hover:bg-[#FFF5F5]' : 'bg-gray-50 hover:bg-[#FFF5F5]'
               }`}
             >
               <td className={`${td} font-medium ${isDark ? 'text-white' : 'text-gray-800'}`}>
@@ -47,7 +47,7 @@ const ProductTable = ({ products, onEdit, onDelete }) => {
               <td className={`${td}`}>
                 <span className={`px-2 py-1 rounded-lg text-xs font-semibold ${
                   product.quantity <= 10
-                    ? 'bg-rose-500 text-white'
+                    ? 'bg-white text-[#E60000] border border-[#FFD6D6]'
                     : 'bg-green-500 text-white'
                 }`}>
                   {product.quantity}
@@ -71,7 +71,7 @@ const ProductTable = ({ products, onEdit, onDelete }) => {
                   {onDelete && (
                     <button
                       onClick={() => onDelete(product)}
-                      className="flex items-center gap-1 bg-rose-500 hover:bg-rose-600 text-white px-3 py-1.5 rounded-lg text-xs font-semibold transition duration-200"
+                      className="flex items-center gap-1 bg-white hover:bg-[#FFF5F5] text-[#E60000] border border-[#FFD6D6] px-3 py-1.5 rounded-lg text-xs font-semibold transition duration-200"
                     >
                       <Trash2 size={12} />
                       Delete

@@ -27,7 +27,7 @@ const InventoryManagement = () => {
   const [adjustData, setAdjustData] = useState({ adjustment: '', reason: '' });
   const [adjustLoading, setAdjustLoading] = useState(false);
 
-  const input = `w-full border rounded-lg px-3 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-rose-500 transition duration-200 ${
+  const input = `w-full border rounded-lg px-3 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-[#FF0000] transition duration-200 ${
     isDark ? 'bg-slate-700 border-slate-600 text-white placeholder-slate-400' : 'bg-white border-gray-300 text-gray-800'
   }`;
   const label = `block text-xs font-medium mb-1.5 ${isDark ? 'text-slate-300' : 'text-gray-700'}`;
@@ -103,7 +103,7 @@ const InventoryManagement = () => {
 
       {/* Header */}
       <div className="mb-6">
-        <h1 className={`text-2xl font-bold ${isDark ? 'text-white' : 'text-rose-600'}`}>Inventory Management</h1>
+        <h1 className={`text-2xl font-bold ${isDark ? 'text-white' : 'text-[#E60000]'}`}>Inventory Management</h1>
         <p className={`text-sm mt-1 ${isDark ? 'text-slate-400' : 'text-gray-500'}`}>Track and manage stock levels</p>
       </div>
 
@@ -114,7 +114,7 @@ const InventoryManagement = () => {
         </div>
       )}
       {error && (
-        <div className="bg-rose-100 border border-rose-400 text-rose-700 px-4 py-3 rounded-lg mb-4 text-sm">
+        <div className="bg-[#FFF0F0] border border-[#FF3333] text-[#CC0000] px-4 py-3 rounded-lg mb-4 text-sm">
           ⚠️ {error}
         </div>
       )}
@@ -126,7 +126,7 @@ const InventoryManagement = () => {
       <div className={`rounded-xl shadow p-4 ${isDark ? 'bg-slate-800' : 'bg-white'}`}>
         {loading ? (
           <div className="text-center py-8">
-            <div className="w-8 h-8 border-4 border-rose-600 border-t-transparent rounded-full animate-spin mx-auto mb-2" />
+            <div className="w-8 h-8 border-4 border-[#E60000] border-t-transparent rounded-full animate-spin mx-auto mb-2" />
             <p className={`text-sm ${isDark ? 'text-slate-400' : 'text-gray-500'}`}>Loading inventory...</p>
           </div>
         ) : (
@@ -140,8 +140,8 @@ const InventoryManagement = () => {
           <div className={modalBox}>
             <div className="flex items-center justify-between mb-5">
               <div className="flex items-center gap-3">
-                <div className="bg-rose-100 p-2 rounded-xl">
-                  <Pencil size={18} className="text-rose-600" />
+                <div className="bg-[#FFF0F0] p-2 rounded-xl">
+                  <Pencil size={18} className="text-[#E60000]" />
                 </div>
                 <div>
                   <h2 className={`text-lg font-semibold ${isDark ? 'text-white' : 'text-gray-800'}`}>Update Stock</h2>
@@ -156,7 +156,7 @@ const InventoryManagement = () => {
 
             {/* Product preview */}
             <div className={`flex items-center gap-3 p-3 rounded-xl mb-4 ${isDark ? 'bg-slate-700' : 'bg-gray-50'}`}>
-              <div className="bg-rose-600 rounded-full p-2.5">
+              <div className="bg-[#E60000] rounded-full p-2.5">
                 <Package size={16} className="text-white" />
               </div>
               <div>
@@ -188,7 +188,7 @@ const InventoryManagement = () => {
               </div>
               <div className="flex gap-3 pt-1">
                 <button type="submit" disabled={updateLoading}
-                  className="flex-1 bg-rose-600 hover:bg-rose-700 text-white py-2.5 rounded-lg text-sm font-medium transition disabled:opacity-50 disabled:cursor-not-allowed">
+                  className="flex-1 bg-white hover:bg-[#FFF5F5] text-[#E60000] border border-[#FFD6D6] py-2.5 rounded-lg text-sm font-medium transition disabled:opacity-50 disabled:cursor-not-allowed">
                   {updateLoading ? 'Updating...' : 'Update Stock'}
                 </button>
                 <button type="button" onClick={() => setShowUpdateModal(false)}

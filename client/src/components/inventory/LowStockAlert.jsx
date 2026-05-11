@@ -14,21 +14,21 @@ const LowStockAlert = ({ items }) => {
 
       {/* Out of Stock */}
       {outOfStock.length > 0 && (
-        <div className={`border rounded-xl p-4 ${isDark ? 'bg-rose-600 bg-opacity-40 border-rose-700' : 'bg-rose-50 border-rose-200'}`}>
+        <div className={`border rounded-xl p-4 ${isDark ? 'bg-[#E60000] bg-opacity-40 border-[#CC0000]' : 'bg-[#FFF5F5] border-[#FFE5E5]'}`}>
           <div className="flex items-center gap-2 mb-3">
-            <AlertCircle size={16} className="text-rose-500" />
-            <h3 className="text-rose-500 font-semibold text-sm">
+            <AlertCircle size={16} className="text-[#FF0000]" />
+            <h3 className="text-[#FF0000] font-semibold text-sm">
               Out of Stock — {outOfStock.length} item{outOfStock.length > 1 ? 's' : ''}
             </h3>
           </div>
           <div className="space-y-2">
             {outOfStock.map((item) => (
-              <div key={item._id} className={`flex justify-between items-center rounded-lg px-3 py-2 ${isDark ? 'bg-slate-800' : 'bg-white border border-rose-100'}`}>
+              <div key={item._id} className={`flex justify-between items-center rounded-lg px-3 py-2 ${isDark ? 'bg-slate-800' : 'bg-white border border-[#FFF0F0]'}`}>
                 <div>
                   <span className={`text-sm font-medium ${isDark ? 'text-white' : 'text-gray-800'}`}>{item.product?.name}</span>
                   <span className={`text-xs ml-2 ${isDark ? 'text-slate-400' : 'text-gray-500'}`}>{item.product?.category}</span>
                 </div>
-                <span className="text-xs bg-rose-600 text-white px-2 py-0.5 rounded-full font-semibold">0 left</span>
+                <span className="text-xs bg-white text-[#E60000] border border-[#FFD6D6] px-2 py-0.5 rounded-full font-semibold">0 left</span>
               </div>
             ))}
           </div>

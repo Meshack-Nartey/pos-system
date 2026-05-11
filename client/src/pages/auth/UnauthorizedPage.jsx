@@ -20,8 +20,8 @@ const UnauthorizedPage = () => {
 
         {/* Icon */}
         <div className="flex items-center justify-center mb-4">
-          <div className="bg-rose-500 bg-opacity-20 rounded-full p-4">
-            <ShieldX size={40} className="text-rose-500" />
+          <div className="bg-[#FF0000] bg-opacity-20 rounded-full p-4">
+            <ShieldX size={40} className="text-[#FF0000]" />
           </div>
         </div>
 
@@ -37,7 +37,7 @@ const UnauthorizedPage = () => {
         {/* Button */}
         <button
           onClick={handleGoBack}
-          className="flex items-center justify-center gap-2 bg-rose-600 hover:bg-rose-700 text-white px-6 py-2.5 rounded-xl font-medium text-sm transition duration-200 mx-auto"
+          className="flex items-center justify-center gap-2 bg-white hover:bg-[#FFF5F5] text-[#E60000] border border-[#FFD6D6] px-6 py-2.5 rounded-xl font-medium text-sm transition duration-200 mx-auto"
         >
           <ArrowLeft size={16} />
           Go Back to Dashboard

@@ -43,23 +43,23 @@ const Sidebar = ({ isOpen }) => {
   return (
     <div className={`h-full transition-all duration-300 flex flex-col ${
       isOpen ? 'w-56' : 'w-0 overflow-hidden'
-    } ${isDark ? 'bg-slate-950 border-r border-slate-800' : 'bg-rose-500'}`}>
+    } ${isDark ? 'bg-slate-950 border-r border-slate-800' : 'bg-white border-r border-[#FFD6D6]'}`}>
 
       <div className="p-4 flex-1">
 
         {/* User Info */}
         <div className={`rounded-xl p-3 mb-6 ${
-          isDark ? 'bg-slate-900 border border-slate-800' : 'bg-rose-400'
+          isDark ? 'bg-slate-900 border border-slate-800' : 'bg-[#FFF5F5] border border-[#FFD6D6]'
         }`}>
           <div className="flex items-center gap-3">
-            <div className="bg-rose-600 rounded-full p-2">
-              <Users size={16} className="text-white" />
+            <div className="bg-white border border-[#FFD6D6] rounded-full p-2">
+              <Users size={16} className="text-[#E60000]" />
             </div>
             <div>
-              <p className="text-sm font-semibold text-white truncate">
+              <p className={`text-sm font-semibold truncate ${isDark ? 'text-white' : 'text-gray-800'}`}>
                 {user?.name}
               </p>
-              <p className="text-xs text-slate-400 capitalize">
+              <p className={`text-xs capitalize ${isDark ? 'text-slate-400' : 'text-gray-500'}`}>
                 {user?.role}
               </p>
             </div>
@@ -77,10 +77,10 @@ const Sidebar = ({ isOpen }) => {
                 className={({ isActive }) =>
                   `flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm transition duration-200 ${
                     isActive
-                      ? 'bg-rose-300 text-rose-950 font-medium'
+                      ? 'bg-[#FFF0F0] text-[#E60000] font-medium border border-[#FFD6D6]'
                       : isDark
                         ? 'text-slate-300 hover:bg-slate-800 hover:text-white'
-                        : 'text-white/90 hover:bg-rose-400 hover:text-white'
+                        : 'text-gray-700 hover:bg-[#FFF5F5] hover:text-[#E60000]'
                   }`
                 }
               >

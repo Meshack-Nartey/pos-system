@@ -19,7 +19,7 @@ const Cart = ({ onCheckout }) => {
       {/* Cart Header */}
       <div className={`p-4 border-b flex justify-between items-center ${isDark ? 'border-slate-700' : 'border-gray-100'}`}>
         <div className="flex items-center gap-2">
-          <ShoppingCart size={18} className="text-rose-500" />
+          <ShoppingCart size={18} className="text-[#FF0000]" />
           <h2 className={`text-base font-bold ${isDark ? 'text-white' : 'text-gray-800'}`}>
             Cart ({cartItems.length})
           </h2>
@@ -27,7 +27,7 @@ const Cart = ({ onCheckout }) => {
         {cartItems.length > 0 && (
           <button
             onClick={clearCart}
-            className="flex items-center gap-1 text-rose-400 hover:text-rose-500 text-xs transition duration-200"
+            className="flex items-center gap-1 text-[#FF3333] hover:text-[#FF0000] text-xs transition duration-200"
           >
             <Trash2 size={12} />
             Clear
@@ -90,14 +90,14 @@ const Cart = ({ onCheckout }) => {
             )}
             <div className={`flex justify-between text-base font-bold pt-2 border-t ${isDark ? 'border-slate-700 text-white' : 'border-gray-100 text-gray-800'}`}>
               <span>Grand Total</span>
-              <span className="text-rose-500">GH₵ {grandTotal.toFixed(2)}</span>
+              <span className="text-[#FF0000]">GH₵ {grandTotal.toFixed(2)}</span>
             </div>
           </div>
 
           {/* Checkout Button */}
           <button
             onClick={onCheckout}
-            className="w-full flex items-center justify-center gap-2 bg-rose-600 hover:bg-rose-700 text-white py-3 rounded-xl font-medium mt-4 transition duration-200 shadow"
+            className="w-full flex items-center justify-center gap-2 bg-white hover:bg-[#FFF5F5] text-[#E60000] border border-[#FFD6D6] py-3 rounded-xl font-medium mt-4 transition duration-200 shadow"
           >
             <ShoppingCart size={16} />
             Proceed to Payment

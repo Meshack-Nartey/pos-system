@@ -49,28 +49,28 @@ const AdminDashboard = () => {
 
   const card = `rounded-xl shadow p-5 ${isDark ? 'bg-slate-800' : 'bg-white'}`;
   const label = `text-xs font-medium mb-1 ${isDark ? 'text-slate-400' : 'text-gray-500'}`;
-  const value = `text-2xl font-bold ${isDark ? 'text-white' : 'text-rose-600'}`;
+  const value = `text-2xl font-bold ${isDark ? 'text-white' : 'text-[#E60000]'}`;
   const sub = `text-xs mt-1 ${isDark ? 'text-slate-500' : 'text-gray-400'}`;
 
   const summaryCards = summary ? [
-    { label: 'Total Revenue', value: `GH₵ ${Number(summary.totalRevenue).toFixed(2)}`, sub: 'All time', icon: DollarSign, color: 'bg-rose-500' },
+    { label: 'Total Revenue', value: `GH₵ ${Number(summary.totalRevenue).toFixed(2)}`, sub: 'All time', icon: DollarSign, color: 'bg-[#FF0000]' },
     { label: 'Total Transactions', value: summary.totalTransactions, sub: 'All time', icon: ShoppingCart, color: 'bg-green-500' },
     { label: 'Total Products', value: summary.totalProducts, sub: 'In system', icon: Package, color: 'bg-yellow-500' },
-    { label: 'Total Customers', value: summary.totalCustomers, sub: 'Registered', icon: Users, color: 'bg-rose-500' },
+    { label: 'Total Customers', value: summary.totalCustomers, sub: 'Registered', icon: Users, color: 'bg-[#FF0000]' },
   ] : [];
 
   const dailyCards = dailySales ? [
     { label: "Today's Revenue", value: `GH₵ ${Number(dailySales.totalRevenue).toFixed(2)}`, icon: TrendingUp, color: 'text-green-500' },
-    { label: "Today's Transactions", value: dailySales.totalTransactions, icon: ShoppingCart, color: 'text-rose-500' },
+    { label: "Today's Transactions", value: dailySales.totalTransactions, icon: ShoppingCart, color: 'text-[#FF0000]' },
     { label: 'Items Sold Today', value: dailySales.totalItemsSold, icon: Package, color: 'text-yellow-500' },
   ] : [];
 
   const quickLinks = [
-    { label: 'Manage Products', path: '/admin/products', icon: Package, color: 'bg-rose-500 hover:bg-rose-600' },
+    { label: 'Manage Products', path: '/admin/products', icon: Package, color: 'bg-[#FF0000] hover:bg-[#E60000]' },
     { label: 'Manage Inventory', path: '/admin/inventory', icon: Warehouse, color: 'bg-green-500 hover:bg-green-600' },
     { label: 'Manage Customers', path: '/admin/customers', icon: Users, color: 'bg-yellow-500 hover:bg-yellow-600' },
-    { label: 'View Reports', path: '/admin/reports', icon: BarChart3, color: 'bg-rose-500 hover:bg-rose-600' },
-    { label: 'Manage Users', path: '/admin/users', icon: UserCog, color: 'bg-rose-500 hover:bg-rose-600' },
+    { label: 'View Reports', path: '/admin/reports', icon: BarChart3, color: 'bg-[#FF0000] hover:bg-[#E60000]' },
+    { label: 'Manage Users', path: '/admin/users', icon: UserCog, color: 'bg-[#FF0000] hover:bg-[#E60000]' },
     { label: 'Backup & Recovery', path: '/admin/backup', icon: DatabaseBackup, color: 'bg-slate-500 hover:bg-slate-600' },
   ];
 
@@ -79,7 +79,7 @@ const AdminDashboard = () => {
 
       {/* Welcome Header */}
       <div className="mb-6">
-        <h1 className={`text-2xl font-bold ${isDark ? 'text-white' : 'text-rose-600'}`}>
+        <h1 className={`text-2xl font-bold ${isDark ? 'text-white' : 'text-[#E60000]'}`}>
           Welcome back, {user?.name}! 
         </h1>
         <p className={`text-sm mt-1 ${isDark ? 'text-slate-400' : 'text-gray-500'}`}>

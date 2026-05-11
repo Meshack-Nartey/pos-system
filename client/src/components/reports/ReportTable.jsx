@@ -20,10 +20,10 @@ const ReportTable = ({ title, headers, rows, emptyMessage }) => {
       ) : (
         <div className="overflow-x-auto">
           <table className="w-full text-left">
-            <thead className={isDark ? 'bg-slate-700' : 'bg-rose-600'}>
+            <thead className={isDark ? 'bg-slate-700' : 'bg-white border-y border-[#FFD6D6]'}>
               <tr>
                 {headers.map((header, index) => (
-                  <th key={index} className={`${th} ${isDark ? 'text-slate-300' : 'text-white'}`}>
+                  <th key={index} className={`${th} ${isDark ? 'text-slate-300' : 'text-[#E60000]'}`}>
                     {header}
                   </th>
                 ))}
@@ -36,7 +36,7 @@ const ReportTable = ({ title, headers, rows, emptyMessage }) => {
                   className={`transition duration-150 ${
                     isDark
                       ? rowIndex % 2 === 0 ? 'bg-slate-800 hover:bg-slate-700' : 'bg-slate-900 hover:bg-slate-700'
-                      : rowIndex % 2 === 0 ? 'bg-white hover:bg-rose-50' : 'bg-gray-50 hover:bg-rose-50'
+                      : rowIndex % 2 === 0 ? 'bg-white hover:bg-[#FFF5F5]' : 'bg-gray-50 hover:bg-[#FFF5F5]'
                   }`}
                 >
                   {row.map((cell, cellIndex) => (
@@ -46,7 +46,7 @@ const ReportTable = ({ title, headers, rows, emptyMessage }) => {
                         ? `font-bold text-base ${rankColors[rowIndex] || (isDark ? 'text-slate-400' : 'text-gray-400')}`
                       // last column (revenue) — bold and blue
                       : cellIndex === row.length - 1
-                        ? `font-semibold ${isDark ? 'text-rose-400' : 'text-rose-600'}`
+                        ? `font-semibold ${isDark ? 'text-[#FF3333]' : 'text-[#E60000]'}`
                       : isDark ? 'text-slate-300' : 'text-gray-700'
                     }`}>
                       {cell}

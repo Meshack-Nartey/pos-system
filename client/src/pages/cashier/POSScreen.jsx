@@ -260,16 +260,16 @@ const POSScreen = () => {
     <div className={`h-screen flex flex-col ${isDark ? 'bg-slate-900' : 'bg-gray-100'}`}>
 
       {/* Header */}
-      <div className="bg-rose-500 text-white px-6 py-3 flex justify-between items-center shadow-md">
+      <div className="bg-white text-[#E60000] border-b border-[#FFD6D6] px-6 py-3 flex justify-between items-center shadow-sm">
         <div className="flex items-center gap-3">
           <ShoppingCart size={22} />
           <div>
             <h1 className="brand-name text-xl">SwiftSale</h1>
-            <p className="text-xs text-rose-200">{user?.name} — Cashier</p>
+            <p className="text-xs text-gray-500">{user?.name} — Cashier</p>
           </div>
         </div>
         <div className="flex items-center gap-4">
-          <p className="text-sm text-rose-200">
+          <p className="text-sm text-gray-500">
             {new Date().toLocaleDateString('en-GH', {
               weekday: 'long', year: 'numeric',
               month: 'long', day: 'numeric'
@@ -277,7 +277,7 @@ const POSScreen = () => {
           </p>
           <button
             onClick={() => setShowLogoutModal(true)}
-            className="flex items-center gap-2 bg-rose-400 hover:bg-rose-500 text-white text-sm px-3 py-1.5 rounded-lg transition duration-200"
+            className="flex items-center gap-2 bg-white hover:bg-[#FFF5F5] text-[#E60000] border border-[#FFD6D6] text-sm px-3 py-1.5 rounded-lg transition duration-200"
           >
             <LogOut size={14} />
             Logout
@@ -287,7 +287,7 @@ const POSScreen = () => {
 
       {/* Error Message */}
       {error && (
-        <div className="bg-rose-100 border-b border-rose-400 text-rose-700 px-6 py-2 text-sm font-medium">
+        <div className="bg-[#FFF0F0] border-b border-[#FF3333] text-[#CC0000] px-6 py-2 text-sm font-medium">
           ⚠️ {error}
         </div>
       )}
@@ -297,7 +297,7 @@ const POSScreen = () => {
         <div className={`px-6 py-2 text-sm font-medium border-b flex items-center gap-2 ${
           scanFeedback.type === 'success'
             ? 'bg-green-100 border-green-400 text-green-700'
-            : 'bg-rose-100 border-rose-400 text-rose-700'
+            : 'bg-[#FFF0F0] border-[#FF3333] text-[#CC0000]'
         }`}>
           {scanFeedback.type === 'success' ? '✅' : '❌'} {scanFeedback.message}
         </div>
@@ -317,7 +317,7 @@ const POSScreen = () => {
               value={searchQuery}
               onChange={handleSearch}
               placeholder="Search products by name, category or barcode..."
-              className={`w-full pl-9 pr-4 py-3 rounded-xl border text-sm focus:outline-none focus:ring-2 focus:ring-rose-500 transition duration-200 shadow ${
+              className={`w-full pl-9 pr-4 py-3 rounded-xl border text-sm focus:outline-none focus:ring-2 focus:ring-[#FF0000] transition duration-200 shadow ${
                 isDark
                   ? 'bg-slate-800 border-slate-700 text-white placeholder-slate-400'
                   : 'bg-white border-gray-200 text-gray-800 placeholder-gray-400'
@@ -329,7 +329,7 @@ const POSScreen = () => {
           <div className="flex-1 overflow-y-auto">
             {loading ? (
               <div className="text-center py-8">
-                <div className="w-8 h-8 border-4 border-rose-600 border-t-transparent rounded-full animate-spin mx-auto mb-2"></div>
+                <div className="w-8 h-8 border-4 border-[#E60000] border-t-transparent rounded-full animate-spin mx-auto mb-2"></div>
                 <p className={`text-sm ${isDark ? 'text-slate-400' : 'text-gray-500'}`}>Loading products...</p>
               </div>
             ) : products.length === 0 ? (
@@ -346,12 +346,12 @@ const POSScreen = () => {
                     className={`rounded-xl p-4 text-left transition duration-200 shadow relative overflow-hidden ${
                       product.quantity === 0
                         ? `cursor-not-allowed ${isDark ? 'bg-slate-800' : 'bg-white'}`
-                        : `${isDark ? 'bg-slate-800 hover:bg-slate-700' : 'bg-white hover:bg-rose-50'} hover:shadow-md`
+                        : `${isDark ? 'bg-slate-800 hover:bg-slate-700' : 'bg-white hover:bg-[#FFF5F5]'} hover:shadow-md`
                     }`}
                   >
                     {product.quantity === 0 && (
                       <div className="absolute inset-0 flex items-center justify-center bg-black/40 rounded-xl z-10">
-                        <span className="bg-rose-600 text-white text-xs font-bold px-2 py-1 rounded-md">Out of Stock</span>
+                        <span className="bg-white text-[#E60000] border border-[#FFD6D6] text-xs font-bold px-2 py-1 rounded-md">Out of Stock</span>
                       </div>
                     )}
                     <p className={`text-sm font-semibold truncate ${isDark ? 'text-white' : 'text-gray-800'}`}>
@@ -360,11 +360,11 @@ const POSScreen = () => {
                     <p className={`text-xs mt-1 ${isDark ? 'text-slate-400' : 'text-gray-500'}`}>
                       {product.category}
                     </p>
-                    <p className="text-rose-500 font-bold mt-2 text-sm">
+                    <p className="text-[#FF0000] font-bold mt-2 text-sm">
                       GH₵ {Number(product.price).toFixed(2)}
                     </p>
                     <p className={`text-xs mt-1 font-medium ${
-                      product.quantity === 0 ? 'text-rose-500' : product.quantity <= 10 ? 'text-yellow-500' : 'text-green-500'
+                      product.quantity === 0 ? 'text-[#FF0000]' : product.quantity <= 10 ? 'text-yellow-500' : 'text-green-500'
                     }`}>
                       {product.quantity === 0 ? 'Out of stock' : `Stock: ${product.quantity}`}
                     </p>
@@ -389,8 +389,8 @@ const POSScreen = () => {
 
             <div className="flex justify-between items-center mb-5">
               <div className="flex items-center gap-3">
-                <div className="bg-rose-100 p-2 rounded-xl">
-                  <CreditCard size={18} className="text-rose-600" />
+                <div className="bg-[#FFF0F0] p-2 rounded-xl">
+                  <CreditCard size={18} className="text-[#E60000]" />
                 </div>
                 <div>
                   <h2 className={`text-lg font-semibold ${isDark ? 'text-white' : 'text-gray-800'}`}>Payment</h2>
@@ -404,16 +404,16 @@ const POSScreen = () => {
             </div>
 
             {/* Grand Total */}
-            <div className={`rounded-xl p-4 mb-4 text-center ${isDark ? 'bg-slate-700' : 'bg-rose-50'}`}>
+            <div className={`rounded-xl p-4 mb-4 text-center ${isDark ? 'bg-slate-700' : 'bg-[#FFF5F5]'}`}>
               <p className={`text-sm ${isDark ? 'text-slate-400' : 'text-gray-600'}`}>Grand Total</p>
-              <p className="text-3xl font-bold text-rose-500 mt-1">
+              <p className="text-3xl font-bold text-[#FF0000] mt-1">
                 GH₵ {grandTotal.toFixed(2)}
               </p>
             </div>
 
             {/* Error inside modal */}
             {error && (
-              <div className="mb-4 bg-rose-100 border border-red-300 text-rose-700 text-sm rounded-xl px-4 py-3 flex items-start gap-2">
+              <div className="mb-4 bg-[#FFF0F0] border border-[#FFD6D6] text-[#CC0000] text-sm rounded-xl px-4 py-3 flex items-start gap-2">
                 <span className="mt-0.5">⚠️</span>
                 <span>{error}</span>
               </div>
@@ -423,14 +423,14 @@ const POSScreen = () => {
               /* ── OTP entry screen ── */
               <form onSubmit={handleOtpSubmit} className="space-y-4">
                 <div className="text-center py-2">
-                  <div className="bg-rose-100 w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-3">
-                    <Smartphone size={22} className="text-rose-600" />
+                  <div className="bg-[#FFF0F0] w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-3">
+                    <Smartphone size={22} className="text-[#E60000]" />
                   </div>
                   <p className={`font-semibold text-base ${isDark ? 'text-white' : 'text-gray-800'}`}>
                     Enter OTP
                   </p>
                   <p className={`text-xs mt-1 ${isDark ? 'text-slate-400' : 'text-gray-500'}`}>
-                    A code was sent to <span className="font-medium text-rose-500">{mobilePhone}</span>. Enter it below to confirm payment.
+                    A code was sent to <span className="font-medium text-[#FF0000]">{mobilePhone}</span>. Enter it below to confirm payment.
                   </p>
                 </div>
                 <input
@@ -439,7 +439,7 @@ const POSScreen = () => {
                   onChange={(e) => setOtp(e.target.value)}
                   required
                   placeholder="Enter OTP code"
-                  className={`w-full border rounded-lg px-3 py-2.5 text-sm text-center tracking-widest font-semibold focus:outline-none focus:ring-2 focus:ring-rose-500 transition duration-200 ${
+                  className={`w-full border rounded-lg px-3 py-2.5 text-sm text-center tracking-widest font-semibold focus:outline-none focus:ring-2 focus:ring-[#FF0000] transition duration-200 ${
                     isDark ? 'bg-slate-700 border-slate-600 text-white placeholder-slate-400' : 'bg-white border-gray-300 text-gray-800'
                   }`}
                 />
@@ -447,7 +447,7 @@ const POSScreen = () => {
                   <button
                     type="submit"
                     disabled={submittingOtp}
-                    className="flex-1 flex items-center justify-center gap-2 bg-rose-600 hover:bg-rose-700 text-white py-3 rounded-xl font-medium text-sm transition duration-200 disabled:opacity-50"
+                    className="flex-1 flex items-center justify-center gap-2 bg-white hover:bg-[#FFF5F5] text-[#E60000] border border-[#FFD6D6] py-3 rounded-xl font-medium text-sm transition duration-200 disabled:opacity-50"
                   >
                     {submittingOtp ? <div className="w-4 h-4 border-2 border-white border-t-transparent rounded-full animate-spin" /> : null}
                     {submittingOtp ? 'Verifying...' : 'Confirm Payment'}
@@ -468,21 +468,21 @@ const POSScreen = () => {
               <div className="space-y-5 text-center">
                 <div className="flex flex-col items-center gap-3 py-4">
                   <div className="relative w-16 h-16">
-                    <div className={`absolute inset-0 rounded-full border-4 ${isDark ? 'border-slate-600' : 'border-rose-100'}`}></div>
-                    <div className="absolute inset-0 rounded-full border-4 border-rose-500 border-t-transparent animate-spin"></div>
-                    <Smartphone size={24} className="absolute inset-0 m-auto text-rose-500" />
+                    <div className={`absolute inset-0 rounded-full border-4 ${isDark ? 'border-slate-600' : 'border-[#FFF0F0]'}`}></div>
+                    <div className="absolute inset-0 rounded-full border-4 border-[#FF0000] border-t-transparent animate-spin"></div>
+                    <Smartphone size={24} className="absolute inset-0 m-auto text-[#FF0000]" />
                   </div>
                   <div>
                     <p className={`font-semibold text-base ${isDark ? 'text-white' : 'text-gray-800'}`}>
                       Waiting for customer...
                     </p>
                     <p className={`text-sm mt-1 ${isDark ? 'text-slate-400' : 'text-gray-500'}`}>
-                      Prompt sent to <span className="font-medium text-rose-500">{mobilePhone}</span>
+                      Prompt sent to <span className="font-medium text-[#FF0000]">{mobilePhone}</span>
                     </p>
                   </div>
                   <p className={`text-xs px-2 leading-relaxed ${isDark ? 'text-slate-400' : 'text-gray-500'}`}>
                     Ask the customer to check their phone and approve the payment of{' '}
-                    <span className="font-semibold text-rose-500">GH₵ {grandTotal.toFixed(2)}</span>
+                    <span className="font-semibold text-[#FF0000]">GH₵ {grandTotal.toFixed(2)}</span>
                   </p>
                 </div>
                 <button
@@ -515,8 +515,8 @@ const POSScreen = () => {
                           onClick={() => setPaymentMethod(method.id)}
                           className={`flex flex-col items-center gap-1.5 py-3 px-2 rounded-xl border-2 text-xs font-medium transition duration-200 ${
                             paymentMethod === method.id
-                              ? 'border-rose-600 bg-rose-600 text-white'
-                              : `${isDark ? 'border-slate-600 text-slate-300 hover:border-rose-500' : 'border-gray-200 text-gray-600 hover:border-rose-400'}`
+                              ? 'border-[#E60000] bg-white text-[#E60000] border border-[#FFD6D6]'
+                              : `${isDark ? 'border-slate-600 text-slate-300 hover:border-[#FF0000]' : 'border-gray-200 text-gray-600 hover:border-[#FF3333]'}`
                           }`}
                         >
                           <Icon size={20} />
@@ -546,8 +546,8 @@ const POSScreen = () => {
                             onClick={() => setMobileNetwork(net.id)}
                             className={`py-2 rounded-xl border-2 text-xs font-medium transition duration-200 ${
                               mobileNetwork === net.id
-                                ? 'border-rose-600 bg-rose-600 text-white'
-                                : `${isDark ? 'border-slate-600 text-slate-300 hover:border-rose-500' : 'border-gray-200 text-gray-600 hover:border-rose-400'}`
+                                ? 'border-[#E60000] bg-white text-[#E60000] border border-[#FFD6D6]'
+                                : `${isDark ? 'border-slate-600 text-slate-300 hover:border-[#FF0000]' : 'border-gray-200 text-gray-600 hover:border-[#FF3333]'}`
                             }`}
                           >
                             {net.label}
@@ -566,7 +566,7 @@ const POSScreen = () => {
                         required
                         placeholder="e.g. 0241234567"
                         pattern="[0-9]{10}"
-                        className={`w-full border rounded-lg px-3 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-rose-500 transition duration-200 ${
+                        className={`w-full border rounded-lg px-3 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-[#FF0000] transition duration-200 ${
                           isDark
                             ? 'bg-slate-700 border-slate-600 text-white placeholder-slate-400'
                             : 'bg-white border-gray-300 text-gray-800'
@@ -589,7 +589,7 @@ const POSScreen = () => {
                         min={grandTotal}
                         step="0.01"
                         placeholder="0.00"
-                        className={`w-full border rounded-lg px-3 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-rose-500 transition duration-200 ${
+                        className={`w-full border rounded-lg px-3 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-[#FF0000] transition duration-200 ${
                           isDark
                             ? 'bg-slate-700 border-slate-600 text-white placeholder-slate-400'
                             : 'bg-white border-gray-300 text-gray-800'
@@ -612,7 +612,7 @@ const POSScreen = () => {
                   <button
                     type="submit"
                     disabled={processing}
-                    className="flex-1 flex items-center justify-center gap-2 bg-rose-600 hover:bg-rose-700 text-white py-3 rounded-xl font-medium text-sm transition duration-200 disabled:opacity-50"
+                    className="flex-1 flex items-center justify-center gap-2 bg-white hover:bg-[#FFF5F5] text-[#E60000] border border-[#FFD6D6] py-3 rounded-xl font-medium text-sm transition duration-200 disabled:opacity-50"
                   >
                     {processing ? (
                       <div className="w-4 h-4 border-2 border-white border-t-transparent rounded-full animate-spin" />
@@ -649,7 +649,7 @@ const POSScreen = () => {
           <div className={`rounded-2xl shadow-2xl p-6 w-full max-w-sm ${isDark ? 'bg-slate-800' : 'bg-white'}`}>
             <div className="flex justify-between items-center mb-4">
               <div className="flex items-center gap-3">
-                <div className="bg-rose-500 rounded-full p-2">
+                <div className="bg-[#FF0000] rounded-full p-2">
                   <AlertTriangle size={20} className="text-white" />
                 </div>
                 <h2 className={`text-lg font-semibold ${isDark ? 'text-white' : 'text-gray-700'}`}>
@@ -669,7 +669,7 @@ const POSScreen = () => {
             <div className="flex gap-3">
               <button
                 onClick={handleLogoutConfirm}
-                className="flex-1 flex items-center justify-center gap-2 bg-rose-500 hover:bg-rose-600 text-white py-2.5 rounded-xl text-sm font-medium transition duration-200"
+                className="flex-1 flex items-center justify-center gap-2 bg-white hover:bg-[#FFF5F5] text-[#E60000] border border-[#FFD6D6] py-2.5 rounded-xl text-sm font-medium transition duration-200"
               >
                 <LogOut size={16} />
                 Yes, Logout

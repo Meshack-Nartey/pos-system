@@ -41,7 +41,7 @@ const CustomerManagement = () => {
   const [points, setPoints] = useState('');
   const [pointsLoading, setPointsLoading] = useState(false);
 
-  const input = `w-full border rounded-lg px-3 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-rose-500 transition duration-200 ${
+  const input = `w-full border rounded-lg px-3 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-[#FF0000] transition duration-200 ${
     isDark ? 'bg-slate-700 border-slate-600 text-white placeholder-slate-400' : 'bg-white border-gray-300 text-gray-800'
   }`;
   const label = `block text-xs font-medium mb-1.5 ${isDark ? 'text-slate-300' : 'text-gray-700'}`;
@@ -164,10 +164,10 @@ const CustomerManagement = () => {
 
       {/* Header */}
       <div className="flex justify-between items-center mb-6">
-        <h1 className={`text-2xl font-bold ${isDark ? 'text-white' : 'text-rose-600'}`}>Customer Management</h1>
+        <h1 className={`text-2xl font-bold ${isDark ? 'text-white' : 'text-[#E60000]'}`}>Customer Management</h1>
         <button
           onClick={openAddModal}
-          className="flex items-center gap-2 bg-rose-600 hover:bg-rose-700 text-white px-4 py-2 rounded-lg text-sm font-medium transition duration-200 shadow"
+          className="flex items-center gap-2 bg-white hover:bg-[#FFF5F5] text-[#E60000] border border-[#FFD6D6] px-4 py-2 rounded-lg text-sm font-medium transition duration-200 shadow"
         >
           <Plus size={16} /> Register Customer
         </button>
@@ -180,7 +180,7 @@ const CustomerManagement = () => {
         </div>
       )}
       {error && (
-        <div className="bg-rose-100 border border-rose-400 text-rose-700 px-4 py-3 rounded-lg mb-4 text-sm">
+        <div className="bg-[#FFF0F0] border border-[#FF3333] text-[#CC0000] px-4 py-3 rounded-lg mb-4 text-sm">
           ⚠️ {error}
         </div>
       )}
@@ -203,7 +203,7 @@ const CustomerManagement = () => {
       <div className={`rounded-xl shadow p-4 ${isDark ? 'bg-slate-800' : 'bg-white'}`}>
         {loading ? (
           <div className="text-center py-8">
-            <div className="w-8 h-8 border-4 border-rose-600 border-t-transparent rounded-full animate-spin mx-auto mb-2" />
+            <div className="w-8 h-8 border-4 border-[#E60000] border-t-transparent rounded-full animate-spin mx-auto mb-2" />
             <p className={`text-sm ${isDark ? 'text-slate-400' : 'text-gray-500'}`}>Loading customers...</p>
           </div>
         ) : (
@@ -223,10 +223,10 @@ const CustomerManagement = () => {
           <div className={modalBox}>
             <div className="flex items-center justify-between mb-5">
               <div className="flex items-center gap-3">
-                <div className={`p-2 rounded-xl ${editingCustomer ? 'bg-yellow-100' : 'bg-rose-100'}`}>
+                <div className={`p-2 rounded-xl ${editingCustomer ? 'bg-yellow-100' : 'bg-[#FFF0F0]'}`}>
                   {editingCustomer
                     ? <Pencil size={18} className="text-yellow-600" />
-                    : <Plus size={18} className="text-rose-600" />
+                    : <Plus size={18} className="text-[#E60000]" />
                   }
                 </div>
                 <div>
@@ -264,8 +264,8 @@ const CustomerManagement = () => {
           <div className={`w-full max-w-sm rounded-2xl shadow-2xl p-6 ${isDark ? 'bg-slate-800 border border-slate-700' : 'bg-white'}`}>
             <div className="flex items-center justify-between mb-4">
               <div className="flex items-center gap-3">
-                <div className="bg-rose-100 p-2 rounded-xl">
-                  <AlertTriangle size={18} className="text-rose-500" />
+                <div className="bg-[#FFF0F0] p-2 rounded-xl">
+                  <AlertTriangle size={18} className="text-[#FF0000]" />
                 </div>
                 <h2 className={`text-lg font-semibold ${isDark ? 'text-white' : 'text-gray-800'}`}>Delete Customer</h2>
               </div>
@@ -279,7 +279,7 @@ const CustomerManagement = () => {
 
             {/* Customer preview */}
             <div className={`flex items-center gap-3 p-3 rounded-xl mb-4 ${isDark ? 'bg-slate-700' : 'bg-gray-50'}`}>
-              <div className="bg-rose-600 rounded-full p-2.5">
+              <div className="bg-[#E60000] rounded-full p-2.5">
                 <User size={16} className="text-white" />
               </div>
               <div>
@@ -291,14 +291,14 @@ const CustomerManagement = () => {
             </div>
 
             <p className={`text-sm mb-5 ${isDark ? 'text-slate-400' : 'text-gray-600'}`}>
-              This action is <span className="font-semibold text-rose-500">permanent</span> and cannot be undone. Are you sure you want to delete this customer?
+              This action is <span className="font-semibold text-[#FF0000]">permanent</span> and cannot be undone. Are you sure you want to delete this customer?
             </p>
 
             <div className="flex gap-3">
               <button
                 onClick={handleDeleteConfirm}
                 disabled={deleteLoading}
-                className="flex-1 flex items-center justify-center gap-2 bg-rose-500 hover:bg-rose-600 text-white py-2.5 rounded-xl text-sm font-medium transition disabled:opacity-50 disabled:cursor-not-allowed"
+                className="flex-1 flex items-center justify-center gap-2 bg-white hover:bg-[#FFF5F5] text-[#E60000] border border-[#FFD6D6] py-2.5 rounded-xl text-sm font-medium transition disabled:opacity-50 disabled:cursor-not-allowed"
               >
                 <Trash2 size={15} />
                 {deleteLoading ? 'Deleting...' : 'Yes, Delete'}
@@ -334,7 +334,7 @@ const CustomerManagement = () => {
             </div>
 
             <div className={`flex items-center gap-3 p-3 rounded-xl mb-4 ${isDark ? 'bg-slate-700' : 'bg-gray-50'}`}>
-              <div className="bg-rose-600 rounded-full p-2.5">
+              <div className="bg-[#E60000] rounded-full p-2.5">
                 <User size={16} className="text-white" />
               </div>
               <div>
@@ -384,8 +384,8 @@ const CustomerManagement = () => {
           <div className={`w-full max-w-2xl rounded-2xl shadow-2xl p-6 ${isDark ? 'bg-slate-800 border border-slate-700' : 'bg-white'}`}>
             <div className="flex items-center justify-between mb-5">
               <div className="flex items-center gap-3">
-                <div className="bg-rose-100 p-2 rounded-xl">
-                  <History size={18} className="text-rose-600" />
+                <div className="bg-[#FFF0F0] p-2 rounded-xl">
+                  <History size={18} className="text-[#E60000]" />
                 </div>
                 <div>
                   <h2 className={`text-lg font-semibold ${isDark ? 'text-white' : 'text-gray-800'}`}>
@@ -404,7 +404,7 @@ const CustomerManagement = () => {
 
             {historyLoading ? (
               <div className="text-center py-10">
-                <div className="w-7 h-7 border-4 border-rose-600 border-t-transparent rounded-full animate-spin mx-auto mb-2" />
+                <div className="w-7 h-7 border-4 border-[#E60000] border-t-transparent rounded-full animate-spin mx-auto mb-2" />
                 <p className={`text-sm ${isDark ? 'text-slate-400' : 'text-gray-500'}`}>Loading history...</p>
               </div>
             ) : historyData?.sales?.length === 0 ? (
@@ -421,9 +421,9 @@ const CustomerManagement = () => {
                     { label: 'Total Spent', value: `GH₵ ${Number(historyData.totalSpent).toFixed(2)}` },
                     { label: 'Loyalty Points', value: `${historyCustomer.loyaltyPoints} pts` },
                   ].map((s, i) => (
-                    <div key={i} className={`rounded-xl p-3 text-center ${isDark ? 'bg-slate-700' : 'bg-rose-50'}`}>
+                    <div key={i} className={`rounded-xl p-3 text-center ${isDark ? 'bg-slate-700' : 'bg-[#FFF5F5]'}`}>
                       <p className={`text-xs ${isDark ? 'text-slate-400' : 'text-gray-500'}`}>{s.label}</p>
-                      <p className={`text-base font-bold mt-0.5 ${isDark ? 'text-white' : 'text-rose-700'}`}>{s.value}</p>
+                      <p className={`text-base font-bold mt-0.5 ${isDark ? 'text-white' : 'text-[#CC0000]'}`}>{s.value}</p>
                     </div>
                   ))}
                 </div>
@@ -434,14 +434,14 @@ const CustomerManagement = () => {
                     <div key={sale._id} className={`rounded-xl p-4 ${isDark ? 'bg-slate-700' : 'bg-gray-50'}`}>
                       <div className="flex items-center justify-between mb-2">
                         <div className="flex items-center gap-2">
-                          <ShoppingBag size={14} className="text-rose-500" />
+                          <ShoppingBag size={14} className="text-[#FF0000]" />
                           <p className={`text-xs font-medium ${isDark ? 'text-slate-300' : 'text-gray-600'}`}>
                             {new Date(sale.createdAt).toLocaleDateString('en-GH', { year: 'numeric', month: 'short', day: 'numeric' })}
                             {' · '}
                             {new Date(sale.createdAt).toLocaleTimeString('en-GH', { hour: '2-digit', minute: '2-digit' })}
                           </p>
                         </div>
-                        <p className="text-sm font-bold text-rose-500">GH₵ {Number(sale.grandTotal).toFixed(2)}</p>
+                        <p className="text-sm font-bold text-[#FF0000]">GH₵ {Number(sale.grandTotal).toFixed(2)}</p>
                       </div>
                       <div className={`text-xs ${isDark ? 'text-slate-400' : 'text-gray-500'}`}>
                         {sale.items.map(item => `${item.name} ×${item.quantity}`).join(', ')}
@@ -449,7 +449,7 @@ const CustomerManagement = () => {
                       <div className="flex items-center justify-between mt-2">
                         <span className={`text-xs capitalize px-2 py-0.5 rounded-full ${
                           sale.paymentMethod === 'mobile_money'
-                            ? 'bg-rose-100 text-rose-600'
+                            ? 'bg-[#FFF0F0] text-[#E60000]'
                             : 'bg-green-100 text-green-600'
                         }`}>
                           {sale.paymentMethod === 'mobile_money' ? 'Mobile Money' : 'Cash'}
@@ -465,7 +465,7 @@ const CustomerManagement = () => {
             ) : null}
 
             <button onClick={() => setShowHistoryModal(false)}
-              className="mt-5 w-full bg-rose-600 hover:bg-rose-700 text-white py-2.5 rounded-xl text-sm font-medium transition">
+              className="mt-5 w-full bg-white hover:bg-[#FFF5F5] text-[#E60000] border border-[#FFD6D6] py-2.5 rounded-xl text-sm font-medium transition">
               Close
             </button>
           </div>

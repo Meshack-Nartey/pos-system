@@ -4,13 +4,13 @@
 
 :root {
   --bg-primary: #ffffff;
-  --bg-secondary: #fff7f8;
+  --bg-secondary: #ffffff;
   --bg-card: #ffffff;
   --text-primary: #111827;
   --text-secondary: #6b7280;
-  --border-color: #f8d7da;
-  --sidebar-bg: #b85c72;
-  --navbar-bg: #c76b80;
+  --border-color: #ffd6d6;
+  --sidebar-bg: #ffffff;
+  --navbar-bg: #ffffff;
 }
 
 .dark {
@@ -21,7 +21,7 @@
   --text-secondary: #94a3b8;
   --border-color: #334155;
   --sidebar-bg: #111827;
-  --navbar-bg: #9f4c60;
+  --navbar-bg: #111827;
 }
 
 .brand-name {
